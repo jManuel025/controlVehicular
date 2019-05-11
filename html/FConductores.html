@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="PConductores.php" enctype="multipart/form-data">
+  <p>Conductores</p>
+  <p>
+    <label>CURP
+    <input name="curp" type="text" id="curp" required/>
+    </label>
+  </p>
+  <p>
+    <label>Nombre
+    <input name="nombre" type="text" id="nombre" required/>
+    </label>
+  </p>
+  <p>
+    <label>Direccion
+    <input name="direccion" type="text" id="direccion" required/>
+    </label>
+  </p>
+  <p>
+    <label>Firma
+      <input type="file" name="firma" id="firma" required>
+    </label>
+  </p>
+  <p>
+    <label>Donador</label>
+  </p>
+  <p>
+    <label>
+    <input name="donador" type="radio" value="Si" />
+    Si</label> 
+    <label>
+    <input name="donador" type="radio" value="No" />
+    No</label>
+  </p>
+  <p>
+    <label>Grupo sanguineo
+    <select name="tSangre">
+      <option>A+</option>
+      <option>B+</option>
+      <option>O+</option>
+      <option>O-</option>
+      <option>AB+</option>
+      <option>AB-</option>
+    </select>
+</label>
+  </p>
+  <p>Restriccion
+    <input name="restriccion" type="text" id="restriccion" />
+</p>
+  <p>
+    <label>Telefono de emergencia
+    <input name="telEmergencia" type="text" id="telEmergencia" />
+    </label>
+  </p>
+  <p>
+    <label>Fecha de nacimiento
+    <input name="fNacimiento" type="date" id="fNacimiento" />
+    </label>
+</p>
+  <p>
+    <label>
+    <input type="submit" name="Submit" value="Submit" />
+    </label>
+  </p>
+</form>
+</body>
+</html>
+ 
