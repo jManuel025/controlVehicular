@@ -1,0 +1,12 @@
+[BaseDatos]
+;variables de BD
+	Server = "127.0.0.1"
+	Username = "root"
+	Password = ""
+	DataBase = "controlvehicular"
+
+[Archivos]
+;variables de archivo
+	FileName = "Datax.txt"
+	Method = "r"
+	Path = "C:\xampp\htdocs\DAAD267795"

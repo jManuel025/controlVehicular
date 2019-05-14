@@ -1,75 +1,74 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
+<!DOCTYPE html>
+<meta charset="UTf-8">
+<link rel="stylesheet" href="../css/estilosFormularios.css">
+<link href="https://fonts.googleapis.com/css?family=Rokkitt:400,700" rel="stylesheet">
+<title>Registro conductores</title>
 </head>
-
 <body>
-<form id="form1" name="form1" method="post" action="PConductores.php" enctype="multipart/form-data">
-  <p>Conductores</p>
-  <p>
-    <label>CURP
-    <input name="curp" type="text" id="curp" required/>
-    </label>
-  </p>
-  <p>
-    <label>Nombre
-    <input name="nombre" type="text" id="nombre" required/>
-    </label>
-  </p>
-  <p>
-    <label>Direccion
-    <input name="direccion" type="text" id="direccion" required/>
-    </label>
-  </p>
-  <p>
-    <label>Firma
-      <input type="file" name="firma" id="firma" required>
-    </label>
-  </p>
-  <p>
-    <label>Donador</label>
-  </p>
-  <p>
-    <label>
-    <input name="donador" type="radio" value="Si" />
-    Si</label> 
-    <label>
-    <input name="donador" type="radio" value="No" />
-    No</label>
-  </p>
-  <p>
-    <label>Grupo sanguineo
-    <select name="tSangre">
-      <option>A+</option>
-      <option>B+</option>
-      <option>O+</option>
-      <option>O-</option>
-      <option>AB+</option>
-      <option>AB-</option>
-    </select>
-</label>
-  </p>
-  <p>Restriccion
-    <input name="restriccion" type="text" id="restriccion" />
-</p>
-  <p>
-    <label>Telefono de emergencia
-    <input name="telEmergencia" type="text" id="telEmergencia" />
-    </label>
-  </p>
-  <p>
-    <label>Fecha de nacimiento
-    <input name="fNacimiento" type="date" id="fNacimiento" />
-    </label>
-</p>
-  <p>
-    <label>
-    <input type="submit" name="Submit" value="Submit" />
-    </label>
-  </p>
-</form>
+  <div class="contenedor">
+      <form method="post" action="../php/PConductores.php" enctype="multipart/form-data">
+        <h1>Conductores</h1>
+            <label>
+                <p>CURP:</p>
+                <input name="curp" type="text" id="curp" required placeholder="AAAA000000AAAAAA00"/>
+            </label>
+            <label>
+                <p>Nombre:</p>
+                <input name="nombre" type="text" id="nombre" required placeholder="Miguel de Cervantes Saavedra"/>
+            </label>
+            <label>
+                <p>Dirección:</p>
+                <input name="direccion" type="text" id="direccion" required placeholder="Enrique Segoviano, Col. Chespirito #8"/>
+            </label>
+            <div class="firma">
+                <p>Firma:</p>
+                <div class="file">
+                    <p>Seleccionar archivo</p>
+                    <!-- <label for="firma">Seleccionar archivo</label> -->
+                    <input type="file" name="firma" id="firma" required/>
+                </div>
+            </div>
+
+            <div class="donador">
+                <p>Donador:</p>
+                <div class="radio">
+                    <input name="donador" type="radio" value="Si" id="si" checked/>
+                    <label for="si">Si</label>
+                    <input name="donador" type="radio" value="No" id="no"/>
+                    <label for="no">No</label>
+                </div>
+            </div>
+            
+            <!-- <label>
+                <p>Donador:</p>
+                <p>Si <input name="donador" type="radio" value="Si" /></p>
+                <p>No <input name="donador" type="radio" value="No" /></p>
+            </label> -->
+            <label>
+                <p class="select">Grupo sanguíneo:</p>
+                <select name="tSangre" id="tipo">
+                  <option>A+</option>
+                  <option>B+</option>
+                  <option>O+</option>
+                  <option>O-</option>
+                  <option>AB+</option>
+                  <option>AB-</option>
+                </select>
+            </label>
+          <label>
+              <p>Restricciones:</p>
+              <input name="restriccion" type="text" id="restriccion" placeholder="Ninguna"/>
+          </label>
+            <label>
+                <p>Teléfono de emergencia:</p>
+                <input name="telEmergencia" type="tel" id="telEmergencia" pattern="[0-9]{10}" placeholder="8743516948"/>
+            </label>
+            <label>
+                <p class="date">Fecha de nacimiento:</p>
+                <input name="fNacimiento" type="date" id="fNacimiento" />
+            </label>
+            <input type="submit" name="Submit" value="Registrar" class="btnRegistra"/>
+      </form>
+  </div>
 </body>
 </html>
- 

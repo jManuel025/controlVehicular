@@ -1,38 +1,31 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
+<!DOCTYPE html>
+<meta charset="UTf-8">
+<link rel="stylesheet" href="../css/estilosFormularios.css">
+<link href="https://fonts.googleapis.com/css?family=Rokkitt:400,700" rel="stylesheet">
+<title>Registro tenencias</title>
 </head>
-
 <body>
-<form id="form1" name="form1" method="post" action="PTenencias.php">
-  <p>Tenencias</p>
-  <p>
-    <label>ID Tenencia
-    <input name="idTenencia" type="number" id="idTenencia" required/ disabled="disabled">
-    </label>
-  </p>
-  <p>
-    <label>Vehiculo
-    <input name="vehiculo" type="number" id="vehiculo" required/>
-    </label>
-  </p>
-  <p>
-    <label>Año
-    <input name="year" type="date" id="year" required/ min="1900" max="2100">
-    </label>
-  </p>
-  <p>
-    <label>Monto
-    <input name="monto" type="number" id="monto" required step=".01"/>
-    </label>
-</p>
-  <p>
-    <label>
-    <input type="submit" name="Submit" value="Submit" />
-    </label>
-  </p>
-</form>
+  <div class="contenedor">
+    <form method="post" action="../php/PTenencias.php" enctype="multipart/form-data">
+      <h1>Tenencias</h1>
+      <!-- <label>
+        <p>ID Tenencia:</p>
+        <input name="idTenencia" type="number" id="idTenencia" required/ disabled="disabled">
+      </label> -->
+      <label>
+        <p>Vehiculo:</p>
+        <input name="vehiculo" type="number" id="vehiculo" required/>
+      </label>
+      <label>
+        <p>AÃ±o:</p>
+        <input name="year" type="date" id="year" required/ min="1900" max="2100">
+      </label>
+      <label>
+        <p>Monto:</p>
+        <input name="monto" type="number" id="monto" required step=".01"/>
+      </label>
+      <input type="submit" name="Submit" value="Registrar" class="btnRegistra"/>
+    </form>
+  </div>
 </body>
 </html>

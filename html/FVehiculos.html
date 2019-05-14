@@ -1,131 +1,107 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
+<!DOCTYPE html>
+<meta charset="UTf-8">
+<link rel="stylesheet" href="../css/estilosFormularios.css">
+<link href="https://fonts.googleapis.com/css?family=Rokkitt:400,700" rel="stylesheet">
+<title>Registro vehÃ­culos</title>
 </head>
 
 <body>
-<form id="form1" name="form1" method="post" action="PVehiculos.php">
-  <p>Vehiculos</p>
-  <p>
-    <label>ID Vehiculo
-    <input name="idVehiculo" type="number" id="idVehiculo" required/>
-    </label>
-  </p>
-  <p>
-    <label>Propietario
-    <input name="propietario" type="text" id="propietario" required/>
-    </label>
-  </p>
-  <p>
-    <label>Placa
-    <input name="placa" type="text" id="placa" required/>
-    </label>
-</p>
-  <p>
-    <label>Tipo
-    <input name="tipo" type="text" id="tipo" required/>
-    </label>
-  </p>
-  <p>
-    <label>Modelo
-    <input name="modelo" type="text" id="modelo" required/>
-    </label>
-  </p>
-  <p>
-    <label>Año
-    <input name="year" type="number" id="year" required/ min="1900" max="2100" step="1">
-    </label>
-  </p>
-  <p>
-    <label>Uso    </label>
-  </p>
-  <p>
-    <label>
-    <input name="uso" type="radio" value="Particular" />
-    Particular</label> 
-    <label>
-     <input name="uso" type="radio" value="Comercial" />
-    Comercial</label>
-  </p>
-  <p>
-    <label>Color
-    <input name="color" type="color" id="color" required/>
-    </label>
-  </p>
-  <p>
-    <label>Puertas
-    <input name="puertas" type="number" id="puertas" min="1" max="4"/>
-    </label>
-  </p>
-  <p>
-    <label>Marca
-    <input name="marca" type="text" id="marca" />
-    </label>
-  </p>
-  <p>
-    <label>Transmision    </label>
-  </p>
-  <p>
-    <label>
-    <input name="transmision" type="radio" value="Automático" />
-    Automatico</label> 
-    <label>
-    <input name="transmision" type="radio" value="Estándar" />
-    Estandar</label>
-  </p>
-  <p>
-    <label>Capacidad de carga
-    <input name="capCarga" type="number" id="capCarga" />
-    </label>
-  </p>
-  <p>
-    <label>Serie
-    <input name="serie" type="text" id="serie" />
-    </label>
-  </p>
-  <p>
-    <label>Numero de motor
-    <input name="numMotor" type="text" id="numMotor" />
-    </label>
-  </p>
-  <p>
-    <label>Línea
-    <input name="linea" type="text" id="linea" />
-    </label>
-  </p>
-  <p>
-    <label>Sublinea
-    <input name="sublinea" type="text" id="sublinea" />
-    </label>
-  </p>
-  <p>
-    <label>Cilindraje
-    <input name="cilindraje" type="number" id="cilindraje" />
-    </label>
-  </p>
-  <p>
-    <label>Combustible    </label>
-    <label>
-    <select name="combustible" id="combustible">
-      <option>Gasolina</option>
-      <option>Diesel</option>
-      <option>Electrico</option>
-      <option>Otro</option>
-    </select>
-    </label>
-  </p>
-  <p>
-    <label>Origen
-    <input type="text" name="origen" id="origen" />
-    </label>
-</p>
-  <p>
-    <label>
-    <input type="submit" name="Submit" value="Submit" />
-    </label>
-  </p>
-</form>
+  <div class="contenedor">
+    <form method="post" action="../php/PVehiculos.php" enctype="multipart/form-data">
+      <h1>VehÃ­culos</h1>
+      <label>
+        <p>ID Vehiculo:</p>
+        <input name="idVehiculo" type="number" id="idVehiculo" required />
+      </label>
+      <label>
+        <p>Propietario:</p>
+        <input name="propietario" type="text" id="propietario" required />
+      </label>
+      <label>
+        <p>Placa:</p>
+        <input name="placa" type="text" id="placa" required />
+      </label>
+      <label>
+        <p>Tipo:</p>
+        <input name="tipo" type="text" id="tipo" required />
+      </label>
+      <label>
+        <p>Modelo:</p>
+        <input name="modelo" type="text" id="modelo" required />
+      </label>
+      <label>
+        <p>AÃ±o:</p>
+        <input name="year" type="number" id="year" required/ min="1900" max="2100" step="1">
+      </label>
+      <div class="uso">
+        <p>Uso:</p>
+        <div class="radio">
+          <input name="uso" type="radio" value="Particular" id="particular"/>
+          <label for="particular">Particular</label>
+          <input name="uso" type="radio" value="Comercial" id="comercial"/>
+          <label for="comercial">Comercial</label>
+        </div>
+      </div>
+      <label>
+        <p>Color:</p>
+        <input name="color" type="text" id="color" required />
+      </label>
+      <label>
+        <p>Puertas:</p>
+        <input name="puertas" type="number" id="puertas" min="1" max="4" />
+      </label>
+      <label>
+        <p>Marca:</p>
+        <input name="marca" type="text" id="marca" />
+      </label>
+      <div class="uso">
+        <p>TransmisiÃ³n:</p>
+        <div class="radio">
+            <input name="transmision" type="radio" value="AutomÃ¡tico" id="auto"/>
+            <label for="auto">Automatico</label>
+            <input name="transmision" type="radio" value="EstÃ¡ndar" id="stan"/>
+            <label for="stan">Estandar</label>
+        </div>
+      </div>
+      <label>
+        <p>Capacidad de carga:</p>
+        <input name="capCarga" type="number" id="capCarga" />
+      </label>
+      <label>
+        <p>Serie:</p>
+        <input name="serie" type="text" id="serie" />
+      </label>
+      <label>
+        <p>Numero de motor:</p>
+        <input name="numMotor" type="text" id="numMotor" />
+      </label>
+      <label>
+        <p>LÃ­nea:</p>
+        <input name="linea" type="text" id="linea" />
+      </label>
+      <label>
+        <p>Sublinea:</p>
+        <input name="sublinea" type="text" id="sublinea" />
+      </label>
+      <label>
+        <p>Cilindraje:</p>
+        <input name="cilindraje" type="number" id="cilindraje" />
+      </label>
+      <label>
+        <p class="select">Combustible:</p>
+        <select name="combustible" id="combustible">
+          <option>Gasolina</option>
+          <option>Diesel</option>
+          <option>Electrico</option>
+          <option>Otro</option>
+        </select>
+      </label>
+      <label>
+        <p>Origen:</p>
+        <input type="text" name="origen" id="origen" />
+      </label>
+      <input type="submit" name="Submit" value="Registrar" class="btnRegistra"/>
+    </form>
+  </div>
 </body>
 </html>
