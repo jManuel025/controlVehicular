@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
@@ -32,22 +32,18 @@
   </div>
 </body>
 </html>
-
+ -->
 
 <?php
+	include("../html/FAcceso.php");
 	session_start();
-	include("Conexion.php");
+	include("conexion.php");
 	$Con = Conectar();
-	
-	
 	$username = $_POST['username'];
 	$password = $_POST['password'];
-	
 	//print("Userame: " . $username."<br>");
 	//print("Pass: " . $password."<br>");
-	
-	$SQL = "select * from usuarios where username = '$username';";
-	
+	$SQL = "SELECT * FROM Usuarios WHERE username = '$username';";
 	$Consulta =Consulta($Con,$SQL);
 	$n = mysqli_num_rows($Consulta);
 	if($n==0)
@@ -71,7 +67,8 @@
 			$_SESSION['username']=$username;
 			$_SESSION['validacion']=True;
 			$_SESSION['tiempo']=time();
-			header("Location:MenuPrincipal.php");
+			header("Location:../html/plantilla.php"); 
+			//CAMBIAR A PLANTILLA
 		}
 		else{
 			echo "<div id='error'>
