@@ -14,5 +14,12 @@
 
     </div>
     <div class="lateral">
-
+        <a href="plantilla.php">Inicio</a>
+        <a href="menuConductores.php">Conductores</a>
+        <a href="menuLicencias.php">Licencias</a>
+        <a href="menuMultas.php">Multas</a>
+        <a href="menuPropietarios.php">Propietarios</a>
+        <a href="menuTenencias.php">Tenencias</a>
+        <a href="menuVehiculos.php">Vehiculos</a>
+        <a href="menuVerificaciones.php">Verificaciones</a>
     </div>

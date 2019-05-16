@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
-<!-- <link rel="stylesheet" href="../css/estilosFormularios.css"> -->
-<link href="https://fonts.googleapis.com/css?family=Rokkitt:400,700" rel="stylesheet">
-<title>Registro licencias</title>
-</head>
-
-<body>
-  <div class="contenedor">
-    <form action="../php/PConductores.php" method="post" enctype="multipart/form-data" name="form1" id="form1">
+<?php include("headerNav.php")?>
+  <div class="contenido">
+  <form action="../php/PConductores.php" method="post" enctype="multipart/form-data" name="form1" id="form1">
       <h1>Licencias</h1>
       <!-- <label>
         <p>ID Licencia:</p>

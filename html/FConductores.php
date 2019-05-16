@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<meta charset="UTf-8">
-<!-- <link rel="stylesheet" href="../css/estilosFormularios.css"> -->
-<link href="https://fonts.googleapis.com/css?family=Rokkitt:400,700" rel="stylesheet">
-<title>Registro conductores</title>
-</head>
-<body>
-  <div class="contenedor">
-      <form method="post" action="../php/PConductores.php" enctype="multipart/form-data">
+<?php include("headerNav.php")?>
+    <div class="contenido">
+    <form method="post" action="../php/PConductores.php" enctype="multipart/form-data">
         <h1>Conductores</h1>
             <label>
                 <p>CURP:</p>
@@ -69,6 +63,6 @@
             </label>
             <input type="submit" name="Submit" value="Registrar" class="btnRegistra"/>
       </form>
-  </div>
+    </div>
 </body>
 </html>
