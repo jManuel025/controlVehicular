@@ -2,6 +2,7 @@
 	$CURP = $_POST["curp"];
 	$Nombre = $_POST["nombre"];
 	$Direccion = $_POST["direccion"];
+	
 	$Firma = $_FILES['firma']; //Se guarda como arreglo asociativo
 	$tipo = $_FILES['firma']['type'];
 	// if(strpos($tipo,'image')!==false){ VALIDACION
@@ -13,6 +14,8 @@
 	$tmp_name = $_FILES['firma']['tmp_name'];
 	move_uploaded_file($tmp_name, $location.$name);
 	$location2=$location.$CURP;
+
+	
 	$Donador = $_POST["donador"];
 	$tSangre = $_POST["tSangre"];
 	$Restriccion = $_POST["restriccion"];

@@ -1,19 +1,19 @@
 <?php include("headerNav.php")?>
     <div class="contenido">
         <div>
-            <a href="FTenencias.php">Altas</a>
+            <a href="FTenencias.php">Registro</a>
         </div>
         <div>
-            <a href="">Bajas</a>
+            <a href="../php/FETenencias.php">Eliminación</a>
         </div>
         <div>
-            <a href="">Cambios</a>
+            <a href="">Modificación</a>
         </div>
-        <div>
+        <!-- <div>
             <a href="">Genera PDF</a>
-        </div>
+        </div> -->
         <div>
-            <a href="">Consultas</a>
+            <a href="../php/FCTenencias.php">Consultas</a>
         </div>
     </div>
 </body>
