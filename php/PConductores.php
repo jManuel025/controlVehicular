@@ -4,16 +4,18 @@
 	$Direccion = $_POST["direccion"];
 	
 	$Firma = $_FILES['firma']; //Se guarda como arreglo asociativo
-	$tipo = $_FILES['firma']['type'];
+	// $tipo = $Firma['type'];
 	// if(strpos($tipo,'image')!==false){ VALIDACION
 	// 	print("Es imagen :D <br />");
 	// }
-	$_FILES['firma']['name'] = $CURP.".png";
-	$name = $_FILES['firma']['name'];
-	$location = "C:/xampp/htdocs/DAAD267795/Archivos/firmas/";
-	$tmp_name = $_FILES['firma']['tmp_name'];
+	$prevExt = explode(".", $Foto['name']);
+	$extension = end($prevExt);
+	$Firma['name'] = $CURP.".".$extension;
+	$name = $Firma['name'];
+	$location = "C:/xampp/htdocs/controlVehicular/firmas/";
+	$tmp_name = $Firma['tmp_name'];
 	move_uploaded_file($tmp_name, $location.$name);
-	$location2=$location.$CURP;
+	$location2=$location.$CURP.$extension;
 
 	
 	$Donador = $_POST["donador"];

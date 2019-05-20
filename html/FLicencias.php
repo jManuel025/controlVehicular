@@ -1,6 +1,6 @@
 <?php include("headerNav.php") ?>
 <div class="contenido">
-  <form action="../php/PConductores.php" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <form action="../php/PLicencias.php" method="post" enctype="multipart/form-data" name="form1" id="form1">
     <h1>Licencias</h1>
     <!-- <label>
         <p>ID Licencia:</p>
@@ -10,6 +10,15 @@
       <p>Conductor:</p>
       <input name="conductor" type="text" id="conductor" required placeholder="AAAA000000AAAAAA00" />
     </label>
+    <div class="foto">
+      <p>Foto:</p>
+      <div class="file">
+        <p>Seleccionar archivo</p>
+        <!-- <label for="firma">Seleccionar archivo</label> -->
+        <input type="file" name="foto" id="foto" required />
+      </div>
+    </div>
+
     <label>
       <p class="date">Fecha de expedicion:</p>
       <input name="fExpedicion" type="date" id="fExpedicion" required />

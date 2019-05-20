@@ -1,23 +1,38 @@
 <?php 
-	$idLicencia = $_POST["idLicencia"];
+	// $idLicencia = $_POST["idLicencia"];
 	$Conductor = $_POST["conductor"];
 	$fExpedicion = $_POST["fExpedicion"];
 	$Tipo = $_POST["tipo"];
 	$fVencimiento = $_POST["fVencimiento"];
 	$Lugar = $_POST["lugar"];
 	$Expide = $_POST["expide"];
-	
-	print("Id Licencia = ".$idLicencia."<br>");
+	$Foto = $_FILES['foto']; //Se guarda como arreglo asociativo
+	// $tipo = $_FILES['foto']['type'];
+	// if(strpos($tipo,'image')!==false){ VALIDACION
+	// 	print("Es imagen :D <br />");
+	// }
+	$prevExt = explode(".", $Foto['name']);
+	$extension = end($prevExt);
+	$Foto['name'] = $Conductor.".".$extension;
+	$name = $Foto['name'];
+	$location = "C:/xampp/htdocs/controlVehicular/fotos/";
+	$tmp_name = $Foto['tmp_name'];
+	move_uploaded_file($tmp_name, $location.$name);
+	$location2 = $location.$Conductor.".".$extension;
+
+	// print("Id Licencia = ".$idLicencia."<br>");
 	print("Conductor = ".$Conductor."<br>");
+	print("Foto = ".$location2."<br>");
 	print("Fecha de expedicion = ".$fExpedicion."<br>");
 	print("Tipo = ".$Tipo."<br>");
 	print("Fecha de vencimiento = ".$fVencimiento."<br>");
 	print("Lugar = ".$Lugar."<br>");
 	print("Expide = ".$Expide."<br>");
+	// print("Tipo = ".$tipo." ".$extension);
 
 	include("conexion.php");
 	$Con = Conectar();
-	$SQL = "INSERT INTO Licencias (idLicencia,conductor,fExpedicion,tipo,fVencimiento,lugar,expide) VALUES ('$idLicencia','$Conductor','$fExpedicion','$Tipo','$fVencimiento','$Lugar','$Expide');";
+	$SQL = "INSERT INTO Licencias (conductor,fExpedicion,tipo,fVencimiento,lugar,expide, foto) VALUES ('$Conductor','$fExpedicion','$Tipo','$fVencimiento','$Lugar','$Expide', '$location2');";
 	$cambio = Consulta($Con, $SQL);
 	if ($cambio == True){
 		print("Registro exitoso");	

@@ -236,10 +236,10 @@
     $pdf->SetXY(62, 49.8);
     $pdf->SetFontSize(2.3);
     $pdf->Cell(20, 1.4, 'SECRETARIA DE PLANEACION Y FINANZAS', 0, 0, 'L');
-    $pdf->Image('poderEjecutivo.jpg', 12, 43, 0, 12);
-    $pdf->Image('qroEsta.png', 38, 46, 0, 6);
+    $pdf->Image('../temp/tarjetas/recursos/poderEjecutivo.jpg', 12, 43, 0, 12);
+    $pdf->Image('../temp/tarjetas/recursos/qroEsta.png', 38, 46, 0, 6);
     //QR
-    $tempDir = getcwd()."/infoQr.png";
+    $tempDir = "C:/xampp/htdocs/controlVehicular/QR/".$RFC.".png"; //Guarda QR en dir
     $nivel = 'H';
     $tamaño = 5;
     $marco = 0;
@@ -249,16 +249,11 @@
     $informacion .= "VEHICULO: ".$marca." ".$modelo." ".$linea." ".$sublinea."\n";
     $informacion .= "Placa: ".$placa."\n";
     $informacion .= "Serie: ".$serie."\n";
-    $informacion .= "Cilindraje: ".$cilindraje."\n";
-    $informacion .= "Carga: ".$capCarga."\n";
-    $informacion .= "Puertas: ".$puertas."\n";
     $informacion .= "Combustible: ".$combustible."\n";
-    $informacion .= "Transmisión: ".$transmision."\n";
-    $informacion .= "Motor: ".$numMotor."\n";
     $informacion .= "Origen: ".$origen."\n";
     QRcode::png($informacion, $tempDir, $nivel, $tamaño);
 
-    $pdf->Image("infoQr.png", 81, 50, 12.5);
+    $pdf->Image("C:/xampp/htdocs/controlVehicular/QR/".$RFC.".png", 81, 50, 12.5); //obtiene imagen de carpeta usa RFC
 
     // // $pdf->Line(10, 43, 95, 43);
     // // $pdf->Line(95, 0, 95, 74);
@@ -271,5 +266,5 @@
     // $pdf->Line(0, 10, 210, 10);
     // $pdf->Line(0, 64, 210, 64); //95,64
 
-    $pdf->Output('I', 'tarjeta.pdf', true);
+    $pdf->Output('F', 'C:/xampp/htdocs/controlVehicular/temp/tarjetas/'.$RFC.'.pdf', true); // 'F' Guarda pdf en dir tep
 ?>
