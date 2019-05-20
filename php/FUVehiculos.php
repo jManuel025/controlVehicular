@@ -60,7 +60,7 @@ if (isset($_POST['id'])) {
     <div class='uso'>
       <p>Uso:</p>
       <div class='radio'>
-        <input name='uso' type='radio' value='Particular' id='particular'  />
+        <input name='uso' type='radio' value='Particular' id='particular' checked  />
         <label for='particular'>Particular</label>
         <input name='uso' type='radio' value='Comercial' id='comercial' />
         <label for='comercial'>Comercial</label>
@@ -81,7 +81,7 @@ if (isset($_POST['id'])) {
     <div class='uso'>
       <p>Transmisión:</p>
       <div class='radio'>
-        <input name='transmision' type='radio' value='Automático' id='auto' />
+        <input name='transmision' type='radio' value='Automático' id='auto' checked />
         <label for='auto'>Automatico</label>
         <input name='transmision' type='radio' value='Estándar' id='stan' />
         <label for='stan'>Estandar</label>
