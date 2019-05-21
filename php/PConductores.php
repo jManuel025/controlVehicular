@@ -12,7 +12,7 @@
 	$extension = end($prevExt);
 	$Firma['name'] = $CURP.".".$extension;
 	$name = $Firma['name'];
-	$location = "C:/xampp/htdocs/controlVehicular/firmas/";
+	$location = "C:/xampp/htdocs/DAAD267794/controlVehicular/firmas/";
 	$tmp_name = $Firma['tmp_name'];
 	move_uploaded_file($tmp_name, $location.$name);
 	$location2=$location.$CURP.".".$extension;

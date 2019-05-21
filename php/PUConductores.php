@@ -10,10 +10,16 @@
 	// }
 	$_FILES['firma']['name'] = $CURP.".png";
 	$name = $_FILES['firma']['name'];
-	$location = "C:/xampp/htdocs/DAAD267795/Archivos/firmas/";
+	$location = "C:/xampp/htdocs/DAAD267794/controlVehicular/Archivos/firmas/";
 	$tmp_name = $_FILES['firma']['tmp_name'];
 	move_uploaded_file($tmp_name, $location.$name);
 	$location2=$location.$CURP;
+
+	$Donador = $_POST["donador"];
+	$tSangre = $_POST["tSangre"];
+	$Restriccion = $_POST["restriccion"];
+	$telEmergencia = $_POST["telEmergencia"];
+	$fNacimiento = $_POST["fNacimiento"];
 
 	print("CURP = ".$CURP."<br>");
 	print("Nombre = ".$Nombre."<br>");
@@ -30,8 +36,8 @@
 	//enviar instrucciones SQL al SMBD
 	include("conexion.php");
 	$Con = Conectar();
-	$SQL = "UPDATE vehiculos SET idVehiculo='$idVehiculoN',propietario='$Propietario',placa='$Placa',tipo='$Tipo',modelo='$Modelo',anio='$Year',uso='$Uso',color='$Color',puerta='$Puertas',marca='$Marca',transmision='$Transmision',capCarga='$capCarga',serie='$Serie',numMotor='$numMotor',linea='$Linea',sublinea='$Sublinea',cilindraje='$Cilindraje',combustible='$Combustible',origen='$Origen' WHERE idVehiculo ='$id';";
-	$cambio = Consulta($Con, $SQL);
+	$SQL = "UPDATE conductores SET CURP='$CURP',nombre='$Nombre',direccion='$Direccion',firma='$location2',donador='$Donador',tSangre='$tSangre',restriccion='$Restriccion',tEmergencia='$telEmergencia',fNacimiento='$fNacimiento' WHERE curp ='$CURP';";
+	$cambio = Consulta($Con, $SQL);p
 	if ($cambio == True){
 		print("Cambio exitoso");	
 	}
