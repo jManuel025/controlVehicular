@@ -7,7 +7,7 @@
             <a href="../php/FEVehiculos.php">Eliminación</a>
         </div>
         <div>
-            <a href="">Modificación</a>
+            <a href="../php/FUVehiculos.php">Modificación</a>
         </div>
         <!-- <div>
             <a href="">Genera PDF</a>

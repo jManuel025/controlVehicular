@@ -17,6 +17,13 @@
 	$cambio = Consulta($Con, $SQL);
 	if ($cambio == True){
 		print("Registro exitoso");	
+		$verificaciones = new SimpleXMLElement('C:\xampp\htdocs\controlVehicular\temp\XML\verificaciones.xml', null, true);
+		$nuevaVerificacion = $verificaciones->addChild('verificacion');
+		$nuevaVerificacion->addChild('vehiculo', $Vehiculo);
+		$nuevaVerificacion->addChild('fecha', $Fecha);
+		$nuevaVerificacion->addChild('dictamen', $Dictamen);
+		$nuevaVerificacion->addChild('periodo', $Periodo);
+		$verificaciones->asXML('C:\xampp\htdocs\controlVehicular\temp\XML\verificaciones.xml');
 	}
 	else{
 		$cont = mysqli_affected_rows($Con);

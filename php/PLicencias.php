@@ -34,8 +34,24 @@
 	$Con = Conectar();
 	$SQL = "INSERT INTO Licencias (conductor,fExpedicion,tipo,fVencimiento,lugar,expide, foto) VALUES ('$Conductor','$fExpedicion','$Tipo','$fVencimiento','$Lugar','$Expide', '$location2');";
 	$cambio = Consulta($Con, $SQL);
+	
+	$idLicencia = mysqli_insert_id($Con);
+	
+	print("ID asignado = ".$idLicencia."<br>");
 	if ($cambio == True){
-		print("Registro exitoso");	
+		print("Registro exitoso");
+		$licencias = new SimpleXMLElement('C:\xampp\htdocs\controlVehicular\temp\XML\licencias.xml', null, true);
+		$nuevaLicencia = $licencias->addChild('licencia');
+		$nuevaLicencia->addChild('conductor', $Conductor);
+		$nuevaLicencia->addChild('foto', $location2);
+		$nuevaLicencia->addChild('fecExpedicion', $fExpedicion);
+		$nuevaLicencia->addChild('tipo', $Tipo);
+		$nuevaLicencia->addChild('fecVence', $fVencimiento);
+		$nuevaLicencia->addChild('lugar', $Lugar);
+		$nuevaLicencia->addChild('expide', $Expide);
+		$licencias->asXML('C:\xampp\htdocs\controlVehicular\temp\XML\licencias.xml');
+		
+		include('formatoLicencia.php');
 	}
 	else{
 		$cont = mysqli_affected_rows($Con);

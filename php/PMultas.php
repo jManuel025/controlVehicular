@@ -25,6 +25,16 @@
 	$cambio = Consulta($Con, $SQL);
 	if ($cambio == True){
 		print("Registro exitoso");	
+		$multas = new SimpleXMLElement('C:\xampp\htdocs\controlVehicular\temp\XML\multas.xml', null, true);
+		$nuevaMulta = $multas->addChild('multa');
+		$nuevaMulta->addChild('vehiculo', $Vehiculo);
+		$nuevaMulta->addChild('licencia', $Licencia);
+		$nuevaMulta->addChild('monto', $Monto);
+		$nuevaMulta->addChild('lugar', $Lugar);
+		$nuevaMulta->addChild('fecha', $Fecha);
+		$nuevaMulta->addChild('idOficial', $Motivo);
+		$nuevaMulta->addChild('hora', $Hora);
+		$multas->asXML('C:\xampp\htdocs\controlVehicular\temp\XML\multas.xml');
 	}
 	else{
 		$cont = mysqli_affected_rows($Con);

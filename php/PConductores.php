@@ -8,14 +8,14 @@
 	// if(strpos($tipo,'image')!==false){ VALIDACION
 	// 	print("Es imagen :D <br />");
 	// }
-	$prevExt = explode(".", $Foto['name']);
+	$prevExt = explode(".", $Firma['name']);
 	$extension = end($prevExt);
 	$Firma['name'] = $CURP.".".$extension;
 	$name = $Firma['name'];
 	$location = "C:/xampp/htdocs/controlVehicular/firmas/";
 	$tmp_name = $Firma['tmp_name'];
 	move_uploaded_file($tmp_name, $location.$name);
-	$location2=$location.$CURP.$extension;
+	$location2=$location.$CURP.".".$extension;
 
 	
 	$Donador = $_POST["donador"];
@@ -40,18 +40,19 @@
 	$cambio = Consulta($Con, $SQL);
 	if ($cambio == True){
 		print("Registro exitoso");	
-		$conductores = new SimpleXMLElement('conductores.xml', null, true);
-		$nuevoConductor = $conductores->addChild('conductor');
-		$nuevoConductor->addChild('curp', $CURP);
-		$nuevoConductor->addChild('nombre', $Nombre);
-		$nuevoConductor->addChild('direccion', $Direccion);
-		$nuevoConductor->addChild('firma', $location2);
-		$nuevoConductor->addChild('donador', $Donador);
-		$nuevoConductor->addChild('sangre', $tSangre);
-		$nuevoConductor->addChild('restriccion', $Restriccion);
-		$nuevoConductor->addChild('telEmergencia', $telEmergencia);
-		$nuevoConductor->addChild('fNacimiento', $fNacimiento);
-		$conductores->asXML('conductores.xml');
+		// NO SE NECESITA
+		// $conductores = new SimpleXMLElement('C:\xampp\htdocs\controlVehicular\temp\XML\conductores.xml', 0, true);
+		// $nuevoConductor = $conductores->addChild('conductor');
+		// $nuevoConductor->addChild('curp', $CURP);
+		// $nuevoConductor->addChild('nombre', $Nombre);
+		// $nuevoConductor->addChild('direccion', $Direccion);
+		// $nuevoConductor->addChild('firma', $location2);
+		// $nuevoConductor->addChild('donador', $Donador);
+		// $nuevoConductor->addChild('sangre', $tSangre);
+		// $nuevoConductor->addChild('restriccion', $Restriccion);
+		// $nuevoConductor->addChild('telEmergencia', $telEmergencia);
+		// $nuevoConductor->addChild('fNacimiento', $fNacimiento);
+		// $conductores->asXML('C:\xampp\htdocs\controlVehicular\temp\XML\conductores.xml');
 	}
 	else{
 		$cont = mysqli_affected_rows($Con);

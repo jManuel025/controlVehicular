@@ -4,7 +4,7 @@
     <h1>Vehículos</h1>
     <label>
       <p>ID Vehiculo:</p>
-      <input name="idVehiculo" type="number" id="idVehiculo" required />
+      <input name="idVehiculo" type="number" id="idVehiculo" disabled/>
     </label>
     <label>
       <p>Propietario:</p>

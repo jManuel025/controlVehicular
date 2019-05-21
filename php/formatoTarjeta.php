@@ -2,10 +2,11 @@
     include('conexion.php');
     require('fpdf.php');
     include('phpqrcode/qrlib.php');
+    // $idVehiculo = "SELECT MAX(idVehiculo) FROM vehiculos;";
     $con = Conectar();
     $sql = "SELECT uso, nombre, RFC, serie, marca, linea, sublinea, cilindraje, capCarga, puerta, combustible, transmision, placa, modelo, numMotor, origen
             FROM vehiculos v, propietarios p
-            WHERE v.propietario = p.RFC AND idVehiculo = 1;";
+            WHERE v.propietario = p.RFC AND idVehiculo = 9;";
     $query = Consulta($con, $sql);   
     $fila = mysqli_fetch_row($query);
     $uso = $fila[0];
@@ -24,6 +25,7 @@
     $modelo = $fila[13];
     $numMotor = $fila[14];
     $origen = $fila[15];
+    // $origen = $idVehiculo;
     Desconectar($con);
 
     $pdf = new FPDF();

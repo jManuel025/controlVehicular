@@ -1,11 +1,11 @@
 <?php
-    include('conexion.php');
+    // include('conexion.php');
+    // $Con = Conectar();
     require('fpdf.php');
-    $con = Conectar();
     $sql = "SELECT idLicencia, nombre, fNacimiento, fExpedicion, fVencimiento, tipo, firma, direccion, restriccion, tSangre, donador, tEmergencia, foto
             FROM conductores c, licencias l
-            WHERE l.conductor = c.CURP AND idLicencia = 9;";
-    $query = Consulta($con, $sql);   
+            WHERE l.conductor = c.CURP AND idLicencia = $idLicencia;";
+    $query = Consulta($Con, $sql);   
     $fila = mysqli_fetch_row($query);
     $idLicencia = $fila[0];
     $nombre = $fila[1];
@@ -21,13 +21,13 @@
     if($donador == 1){$donador = "Si";} else{$donador = "No";}
     $tEmergencia = $fila[11];
     $foto = $fila[12]; //falta extension
-    Desconectar($con);
+    Desconectar($Con);
     
     $pdf = new FPDF();
     $pdf->AddPage('P', 'A5');
     // FRONTAL-------------------------------
     $pdf->Image('../temp/licencias/recursos/mapaqro.png', 47, 76.5, 10);
-    $pdf->Image('../templicencias/recursos/escudoqro.png', 12, 12, 10 );
+    $pdf->Image('../temp/licencias/recursos/escudoqro.png', 12, 12, 10 );
     $pdf->SetLeftMargin(23);
     $pdf->SetFont('Arial','',5.5);
     $pdf->SetXY(23, 12);
@@ -183,5 +183,6 @@
     $pdf->Image("../temp/licencias/recursos/mapaqroR.png", 92, 76.5, 10);
     $pdf->Image('../temp/licencias/recursos/secSeg.jpg', 119, 82.5, 15);
 
-    $pdf->Output('I', "C:/xampp/htdocs/DAAD267795/Archivos/Licencias/".$idLicencia.".pdf", true);
+    $pdf->Output('F', 'C:/xampp/htdocs/controlVehicular/temp/licencias/'.$idLicencia.'.pdf', true);
+    
 ?>
