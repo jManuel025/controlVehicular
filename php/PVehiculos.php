@@ -1,5 +1,5 @@
 <?php 
-	$idVehiculo = $_POST["idVehiculo"];
+	// $idVehiculo = $_POST['idVehiculo'];
 	$Propietario = $_POST["propietario"];
 	$Placa = $_POST["placa"];
 	$Tipo = $_POST["tipo"];
@@ -19,12 +19,12 @@
 	$Combustible = $_POST["combustible"];
 	$Origen = $_POST["origen"];
 	
-	print("ID Vehiculo = ".$idVehiculo."<br>");
+	// print("ID Vehiculo = ".$idVehiculo."<br>");
 	print("Propietario = ".$Propietario."<br>");
 	print("Placa = ".$Placa."<br>");
 	print("Tipo = ".$Tipo."<br>");
 	print("Modelo = ".$Modelo."<br>");
-	print("Año = ".$Year."<br>");
+	print("AÃ±o = ".$Year."<br>");
 	print("Uso = ".$Uso."<br>");
 	print("Color = ".$Color."<br>");
 	print("Puertas = ".$Puertas."<br>");
@@ -41,10 +41,33 @@
 	//enviar instrucciones SQL al SMBD
 	include("conexion.php");
 	$Con = Conectar();
-	$SQL = "INSERT INTO Vehiculos VALUES ('$idVehiculo','$Propietario','$Placa','$Tipo','$Modelo','$Year','$Uso','$Color','$Puertas','$Marca','$Transmision','$capCarga','$Serie','$numMotor','$Linea','$Sublinea','$Cilindraje','$Combustible','$Origen');";
+	$SQL = "INSERT INTO Vehiculos VALUES ('','$Propietario','$Placa','$Tipo','$Modelo','$Year','$Uso','$Color','$Puertas','$Marca','$Transmision','$capCarga','$Serie','$numMotor','$Linea','$Sublinea','$Cilindraje','$Combustible','$Origen');";
 	$cambio = Consulta($Con, $SQL);
 	if ($cambio == True){
-		print("Registro exitoso");	
+		print("Registro exitoso");
+		$vehiculos = new SimpleXMLElement('C:\xampp\htdocs\controlVehicular\temp\XML\vehiculos.xml', null, true);
+		$nuevoVehiculo = $vehiculos->addChild('vehiculo');
+		// $nuevoVehiculo->addChild('idVehiculo', $idVehiculo);
+		$nuevoVehiculo->addChild('propietario', $Propietario);
+		$nuevoVehiculo->addChild('placa', $Placa);
+		$nuevoVehiculo->addChild('tipo', $Tipo);
+		$nuevoVehiculo->addChild('modelo', $Modelo);
+		$nuevoVehiculo->addChild('anio', $Year);
+		$nuevoVehiculo->addChild('uso', $Uso);
+		$nuevoVehiculo->addChild('color', $Color);
+		$nuevoVehiculo->addChild('puertas', $Puertas);
+		$nuevoVehiculo->addChild('marca', $Marca);
+		$nuevoVehiculo->addChild('transmision', $Transmision);
+		$nuevoVehiculo->addChild('capCarga', $capCarga);
+		$nuevoVehiculo->addChild('serie', $Serie);
+		$nuevoVehiculo->addChild('numMotor', $numMotor);
+		$nuevoVehiculo->addChild('linea', $Linea);
+		$nuevoVehiculo->addChild('sublinea', $Sublinea);
+		$nuevoVehiculo->addChild('cilindraje', $Cilindraje);
+		$nuevoVehiculo->addChild('combustible', $Combustible);
+		$nuevoVehiculo->addChild('origen', $Origen);
+		$vehiculos->asXML('C:\xampp\htdocs\controlVehicular\temp\XML\vehiculos.xml');
+	
 	}
 	else{
 		$cont = mysqli_affected_rows($Con);

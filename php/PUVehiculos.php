@@ -47,6 +47,10 @@
 	$cambio = Consulta($Con, $SQL);
 	if ($cambio == True){
 		print("Cambio exitoso");	
+		$vehiculosC = new SimpleXMLElement('C:\xampp\htdocs\controlVehicular\temp\XML\vehiculosC.xml', null, true);
+		$cambioVehiculo = $vehiculosC->addChild('cambiosID');
+		$cambioVehiculo->addChild('idCambio', $id);
+		$vehiculosC->asXML('C:\xampp\htdocs\controlVehicular\temp\XML\vehiculosC.xml');
 	}
 	else{
 		

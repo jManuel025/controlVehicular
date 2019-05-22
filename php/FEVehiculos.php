@@ -35,10 +35,15 @@ if (isset($_POST['idVehiculo'])) {
 	Consulta($con, $SQL);
 	$eliminacion = mysqli_affected_rows($con);
 	if ($eliminacion < 0) {
-		$eliminacion += 1;
+		// $eliminacion += 1;
 		print($eliminacion . " eliminaciones realizadas, Eliminación fallida");
 	} else {
+		// $eliminacion += 1;
 		print($eliminacion . " eliminaciones realizadas, Eliminación exitosa");
+		$vehiculosB = new SimpleXMLElement('C:\xampp\htdocs\controlVehicular\temp\XML\vehiculosB.xml', null, true);
+		$bajaVehiculo = $vehiculosB->addChild('bajasID');
+		$bajaVehiculo->addChild('idBaja', $idVehiculo);
+		$vehiculosB->asXML('C:\xampp\htdocs\controlVehicular\temp\XML\vehiculosB.xml');
 	}
 	Desconectar($con);
 }
