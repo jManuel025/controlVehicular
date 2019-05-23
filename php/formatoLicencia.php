@@ -1,7 +1,8 @@
 <?php
     // include('conexion.php');
-    // $Con = Conectar();
     require('fpdf.php');
+    include('phpqrcode/qrlib.php');
+    // $Con = Conectar();
     $sql = "SELECT idLicencia, nombre, fNacimiento, fExpedicion, fVencimiento, tipo, firma, direccion, restriccion, tSangre, donador, tEmergencia, foto
             FROM conductores c, licencias l
             WHERE l.conductor = c.CURP AND idLicencia = $idLicencia;";
@@ -21,7 +22,7 @@
     if($donador == 1){$donador = "Si";} else{$donador = "No";}
     $tEmergencia = $fila[11];
     $foto = $fila[12]; //falta extension
-    Desconectar($Con);
+    // Desconectar($Con);
     
     $pdf = new FPDF();
     $pdf->AddPage('P', 'A5');
@@ -82,6 +83,7 @@
     $pdf->SetFontSize(4);
     $pdf->Cell(8, 2,'Firma', 0, 1, 'L');
     $pdf->Image($firma, 31.5, 76.6, 12.5);
+    // $pdf->Cell(8, 2,$firma, 0, 1, 'L');
     $pdf->SetXY(12,78.6);
     $pdf->SetFont('Arial','',4);
     $pdf->Cell(15, 2,'Antiguedad', 0, 1, 'L');
@@ -182,6 +184,19 @@
     $pdf->Cell(50, 1.5, 'Seguridad Ciudadana del Estado de Querétaro', 0, 1, 'J');
     $pdf->Image("../temp/licencias/recursos/mapaqroR.png", 92, 76.5, 10);
     $pdf->Image('../temp/licencias/recursos/secSeg.jpg', 119, 82.5, 15);
+
+    $tempDir = "C:/xampp/htdocs/controlVehicular/QR/".$idLicencia.".png"; //Guarda QR en dir
+    $nivel = 'H';
+    $tamaño = 5;
+    $marco = 0;
+    
+    $informacion = "ID: ".$idLicencia."\n";
+    $informacion .= "Nombre: ".$nombre."\n";
+    $informacion .= "Fecha de nacimiento: ".$fNacimiento."\n";
+    $informacion .= "Fecha de expedición: ".$fExpedicion."\n";
+    $informacion .= "Tipo: ".$tipo."\n";
+    $informacion .= "Dirección: ".$direccion."\n";
+    QRcode::png($informacion, $tempDir, $nivel, $tamaño);
 
     $pdf->Output('F', 'C:/xampp/htdocs/controlVehicular/temp/licencias/'.$idLicencia.'.pdf', true);
     

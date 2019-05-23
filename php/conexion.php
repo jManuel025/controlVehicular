@@ -16,4 +16,13 @@
 	{
 		mysqli_close($Conexion);
 	}
+	$rutas = parse_ini_file("configuracion.init");
+	$rutaLicencia = $rutas['licencias'];
+	$rutaTarjeta = $rutas['tarjetas'];
+	$rutaPDF = $rutas['pdf'];
+	$rutaXML = $rutas['xml'];
+	$rutaQR = $rutas['qr'];
+	$rutaBarras = $rutas['barras'];
+	$rutaFirmas = $rutas['firmas'];
+	$rutaFotos = $rutas['fotos'];
 ?>

@@ -6,7 +6,7 @@
     $con = Conectar();
     $sql = "SELECT uso, nombre, RFC, serie, marca, linea, sublinea, cilindraje, capCarga, puerta, combustible, transmision, placa, modelo, numMotor, origen
             FROM vehiculos v, propietarios p
-            WHERE v.propietario = p.RFC AND idVehiculo = 9;";
+            WHERE v.propietario = p.RFC AND idVehiculo = 5;";
     $query = Consulta($con, $sql);   
     $fila = mysqli_fetch_row($query);
     $uso = $fila[0];
