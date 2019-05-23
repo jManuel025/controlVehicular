@@ -24,9 +24,11 @@
 	$SQL = "INSERT INTO Multas VALUES ('','$Vehiculo','$Licencia','$Monto','$Lugar','$Fecha','$Motivo','$idOficial','$Hora');";
 	$cambio = Consulta($Con, $SQL);
 	if ($cambio == True){
-		print("Registro exitoso");	
+		print("Registro exitoso");
+		$folio = mysqli_insert_id($Con);
 		$multas = new SimpleXMLElement('C:\xampp\htdocs\controlVehicular\temp\XML\multas.xml', null, true);
 		$nuevaMulta = $multas->addChild('multa');
+		$nuevaMulta->addChild('folio', $folio);
 		$nuevaMulta->addChild('vehiculo', $Vehiculo);
 		$nuevaMulta->addChild('licencia', $Licencia);
 		$nuevaMulta->addChild('monto', $Monto);
@@ -35,6 +37,16 @@
 		$nuevaMulta->addChild('idOficial', $Motivo);
 		$nuevaMulta->addChild('hora', $Hora);
 		$multas->asXML('C:\xampp\htdocs\controlVehicular\temp\XML\multas.xml');
+
+		require('barcode.php');
+		$filepath='C:/xampp/htdocs/controlVehicular/barras/'.$folio.'.png';
+		$text=$folio;
+		$size=40;
+		$orientation="horizontal";
+		$code_type="Code128";
+		$print=true;
+		$sizefactor="1";
+		barcode($filepath, $text, $size, $orientation, $code_type, $print,$sizefactor);
 	}
 	else{
 		$cont = mysqli_affected_rows($Con);

@@ -50,7 +50,6 @@
 		$nuevaLicencia->addChild('lugar', $Lugar);
 		$nuevaLicencia->addChild('expide', $Expide);
 		$licencias->asXML('C:\xampp\htdocs\controlVehicular\temp\XML\licencias.xml');
-		
 		include('formatoLicencia.php');
 	}
 	else{
