@@ -21,7 +21,7 @@
         <div class="flex-grow-0" id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand"> <a class="text-center logo" href="../index1.html" style="color: #8fb8e4;">Sistema de control vehicular</a></li>
-                <li> <a href="../html/menuConductores.html">Conductores</a></li>
+                <li> <a href="menuConductores.html">Conductores</a></li>
                 <li> <a href="#">Licencias</a></li>
                 <li> <a href="#">Multas</a></li>
                 <li> <a href="#">Propietarios</a></li>
@@ -42,43 +42,28 @@
                 <div class="col-md-12">
                     <div style="margin: 10px 0px 0px 10px;">
                         <h1 class="text-center">Conductores</h1>
-                        <h4 class="text-center" style="color: rgb(122,125,129);">Proceso de bajas</h4>
                     </div>
                 </div>
             </div>
+            <div>
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h2 class="card-title">Altas</h2><i class="fa fa-plus-circle" style="font-size: 96px;color: #61a8e4;"></i>
+                        <h6 class="text-muted card-subtitle mb-2">Aqui puedes dar de alta nuevos conductores</h6><a class="btn btn-primary active" role="button" style="background-color: #61a8e4;" href="FConductores.php">Dar de alta</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h2 class="card-title">Bajas</h2><i class="fa fa-minus-circle" style="font-size: 96px;color: #61a8e4;"></i>
+                        <h6 class="text-muted card-subtitle mb-2">Aqui puedes dar de baja a los conductores</h6><a class="btn btn-primary" role="button" style="background-color: #61a8e4;" href="../php/FEConductores.php">Dar de baja</a></div>
+                </div>
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h2 class="card-title">Cambios</h2><i class="fa fa-exchange" style="font-size: 96px;color: #61a8e4;"></i>
+                        <h6 class="text-muted card-subtitle mb-2">Aqui puedes modificar atributos de los conductores</h6><a class="btn btn-primary" role="button" style="background-color: #61a8e4;" href="../php/FUConductores.php">Dar de alta</a></div>
+                </div>
+            </div>
         </div>
-
-<div class="contenido">
-	<form id="form1" name="form1" method="post" action="">
-		<label>CURP
-			<input name="curp" type="text" id="curp">
-		</label>
-		<p>
-			<label>
-				<input name="eliminar" type="submit" id="eliminar" value="Eliminar" class="btn btn-primary contenido">
-			</label>
-		</p>
-	</form>
-</div>
-
-
-<?php
-if (isset($_POST['curp'])) {
-	$CURP = $_POST['curp'];
-	include("conexion.php");
-	$con = Conectar();
-	$SQL = "DELETE FROM Conductores WHERE CURP = '$CURP';";
-	Consulta($con, $SQL);
-	$eliminacion = mysqli_affected_rows($con);
-	if ($eliminacion < 0) {
-		$eliminacion += 1;
-		print($eliminacion . " eliminaciones realizadas, Eliminación fallida");
-	} else {
-		print($eliminacion . " eliminaciones realizadas, Eliminación exitosa");
-	}
-	Desconectar($con);
-}
-?></div>
+    </div>
     </div>
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
