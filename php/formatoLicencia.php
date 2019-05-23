@@ -1,8 +1,9 @@
 <?php
-    // include('conexion.php');
+    include('conexion.php');
     require('fpdf.php');
     include('phpqrcode/qrlib.php');
-    // $Con = Conectar();
+    $Con = Conectar();
+    $idLicencia = 94;
     $sql = "SELECT idLicencia, nombre, fNacimiento, fExpedicion, fVencimiento, tipo, firma, direccion, restriccion, tSangre, donador, tEmergencia, foto
             FROM conductores c, licencias l
             WHERE l.conductor = c.CURP AND idLicencia = $idLicencia;";
@@ -22,7 +23,7 @@
     if($donador == 1){$donador = "Si";} else{$donador = "No";}
     $tEmergencia = $fila[11];
     $foto = $fila[12]; //falta extension
-    // Desconectar($Con);
+    Desconectar($Con);
     
     $pdf = new FPDF();
     $pdf->AddPage('P', 'A5');
@@ -103,18 +104,18 @@
     $pdf->SetXY(23,90);
     $pdf->Cell(31, 2, 'INFRACCION', 0, 1, 'C');
     
-    // $pdf->Line(74, 0, 74, 210);
-    // $pdf->Line(0, 105, 148, 105);
+    $pdf->Line(74, 0, 74, 210);
+    $pdf->Line(0, 105, 148, 105);
 
-    // $pdf->Line(0, 9.5, 148, 9.5);
-    // $pdf->Line(0, 95.5, 148, 95.5);
+    $pdf->Line(0, 9.5, 148, 9.5);
+    $pdf->Line(0, 95.5, 148, 95.5);
 
-    // $pdf->Line(10, 0, 10, 105);
-    // $pdf->Line(64, 0, 64, 105);
+    $pdf->Line(10, 0, 10, 105);
+    $pdf->Line(64, 0, 64, 105);
 
-    // $pdf->Line(84, 0, 84, 105);
-    // $pdf->Line(138, 0, 138, 105);
-    // $pdf->Line(84, 0, 84, 105);
+    $pdf->Line(84, 0, 84, 105);
+    $pdf->Line(138, 0, 138, 105);
+    $pdf->Line(84, 0, 84, 105);
     
     // POSTERIOR --------------------------
     $pdf->Image('../temp/licencias/recursos/911.jpg', 86, 12, 10);
@@ -197,7 +198,7 @@
     $informacion .= "Tipo: ".$tipo."\n";
     $informacion .= "Dirección: ".$direccion."\n";
     QRcode::png($informacion, $tempDir, $nivel, $tamaño);
-
-    $pdf->Output('F', 'C:/xampp/htdocs/controlVehicular/temp/licencias/'.$idLicencia.'.pdf', true);
+    $pdf->Image($tempDir, 86, 45.5, 15);
+    $pdf->Output('I', 'C:/xampp/htdocs/controlVehicular/temp/licencias/'.$idLicencia.'.pdf', true);
     
 ?>
