@@ -39,7 +39,7 @@
 		$multas->asXML('C:\xampp\htdocs\controlVehicular\temp\XML\multas.xml');
 
 		require('barcode.php');
-		$filepath='C:/xampp/htdocs/controlVehicular/barras/'.$folio.'.png';
+		$filepath = 'C:/xampp/htdocs/controlVehicular/barras/'.$folio.'.png';
 		$text=$folio;
 		$size=40;
 		$orientation="horizontal";
@@ -47,6 +47,7 @@
 		$print=true;
 		$sizefactor="1";
 		barcode($filepath, $text, $size, $orientation, $code_type, $print,$sizefactor);
+		include('formatoMultas.php');
 	}
 	else{
 		$cont = mysqli_affected_rows($Con);
@@ -54,4 +55,3 @@
 		print(" tablas afectadas. Registro fallido");	
 	}
 	Desconectar($Con);
-?>
