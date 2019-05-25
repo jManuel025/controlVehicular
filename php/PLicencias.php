@@ -40,8 +40,9 @@
 	print("ID asignado = ".$idLicencia."<br>");
 	if ($cambio == True){
 		print("Registro exitoso");
-		$licencias = new SimpleXMLElement('C:\xampp\htdocs\controlVehicular\temp\XML\licencias.xml', null, true);
+		$licencias = new SimpleXMLElement($rutaXML.'licencias.xml', null, true);
 		$nuevaLicencia = $licencias->addChild('licencia');
+		$nuevaLicencia->addChild('id', $idLicencia);
 		$nuevaLicencia->addChild('conductor', $Conductor);
 		$nuevaLicencia->addChild('foto', $location2);
 		$nuevaLicencia->addChild('fecExpedicion', $fExpedicion);
@@ -49,7 +50,7 @@
 		$nuevaLicencia->addChild('fecVence', $fVencimiento);
 		$nuevaLicencia->addChild('lugar', $Lugar);
 		$nuevaLicencia->addChild('expide', $Expide);
-		$licencias->asXML('C:\xampp\htdocs\controlVehicular\temp\XML\licencias.xml');
+		$licencias->asXML($rutaXML.'licencias.xml');
 		include('formatoLicencia.php');
 	}
 	else{

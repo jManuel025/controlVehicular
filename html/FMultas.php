@@ -2,10 +2,6 @@
 <div class="contenido">
   <form method="post" action="../php/PMultas.php" enctype="multipart/form-data">
     <h1>Multas</h1>
-    <!-- <label>
-            <p>Folio</p>
-            <input name="folio" type="number" id="folio" required disabled="disabled"/>
-          </label> -->
     <label>
       <p>Vehiculo:</p>
       <input name="vehiculo" type="number" id="vehiculo" required />

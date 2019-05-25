@@ -9,9 +9,6 @@
         <div>
             <a href="">Eliminación</a>
         </div>
-        <!-- <div>
-            <a href="">Genera PDF</a>
-        </div> -->
         <div>
             <a href="../php/FCLicencias.php">Consulta</a>
         </div>

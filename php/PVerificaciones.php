@@ -13,17 +13,20 @@
 
 	include("conexion.php");
 	$Con = Conectar();
-	$SQL = "INSERT INTO Verificaciones (vehiculo,fecha,periodo,dictamen) VALUES ('$Vehiculo','$Fecha','$Dictamen','$Periodo');";
+	$SQL = "INSERT INTO Verificaciones (vehiculo,fecha,periodo,dictamen) VALUES ('$Vehiculo','$Fecha','$Periodo','$Dictamen');";
 	$cambio = Consulta($Con, $SQL);
 	if ($cambio == True){
 		print("Registro exitoso");	
+		$idVerificacion = mysqli_insert_id($Con);
 		$verificaciones = new SimpleXMLElement('C:\xampp\htdocs\controlVehicular\temp\XML\verificaciones.xml', null, true);
 		$nuevaVerificacion = $verificaciones->addChild('verificacion');
+		$nuevaVerificacion->addChild('id', $idVerificacion);
 		$nuevaVerificacion->addChild('vehiculo', $Vehiculo);
 		$nuevaVerificacion->addChild('fecha', $Fecha);
 		$nuevaVerificacion->addChild('dictamen', $Dictamen);
 		$nuevaVerificacion->addChild('periodo', $Periodo);
 		$verificaciones->asXML('C:\xampp\htdocs\controlVehicular\temp\XML\verificaciones.xml');
+		include('formatoVerificaciones.php');
 	}
 	else{
 		$cont = mysqli_affected_rows($Con);

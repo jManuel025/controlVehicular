@@ -1,13 +1,10 @@
 <?php
-    include('conexion.php');
     require('fpdf.php');
     include('phpqrcode/qrlib.php');
-    // $idVehiculo = "SELECT MAX(idVehiculo) FROM vehiculos;";
-    $con = Conectar();
-    $sql = "SELECT uso, nombre, RFC, serie, marca, linea, sublinea, cilindraje, capCarga, puerta, combustible, transmision, placa, modelo, numMotor, origen
+    $sql = "SELECT uso, nombre, RFC, serie, marca, linea, sublinea, cilindraje, capCarga, puerta, combustible, transmision, placa, modelo, numMotor, origen, color
             FROM vehiculos v, propietarios p
-            WHERE v.propietario = p.RFC AND idVehiculo = 5;";
-    $query = Consulta($con, $sql);   
+            WHERE v.propietario = p.RFC AND idVehiculo = $idVehiculo;";
+    $query = Consulta($Con, $sql);   
     $fila = mysqli_fetch_row($query);
     $uso = $fila[0];
     $nombre = $fila[1];
@@ -25,9 +22,7 @@
     $modelo = $fila[13];
     $numMotor = $fila[14];
     $origen = $fila[15];
-    // $origen = $idVehiculo;
-    Desconectar($con);
-
+    $color = $fila[16];
     $pdf = new FPDF();
     $pdf->AddPage('L', 'A5');
     // columna1
@@ -78,10 +73,7 @@
     $pdf->Cell(15, 1.5, 'COLOR:', 0, 1, 'L');
     $pdf->SetXY(16, 39);
     $pdf->SetFontSize(4);
-    $pdf->Cell(15, 1.5, 'Negro', 0, 1, 'L');
-
-
-    
+    $pdf->Cell(15, 1.5, $color, 0, 1, 'L');
     // columna2
     $pdf->SetXY(36.5, 12);
     $pdf->SetFontSize(3);
@@ -133,7 +125,6 @@
     $pdf->SetXY(33.5, 39.5);
     $pdf->SetFontSize(4);
     $pdf->Cell(8, 1.5, $transmision, 0, 1, 'L');
-
     // columna3
     $pdf->SetXY(51.5, 12);
     $pdf->SetFontSize(3);
@@ -168,7 +159,6 @@
     $pdf->SetXY(51.5, 38);
     $pdf->SetFontSize(3);
     $pdf->Cell(5, 1.5, 'RFA', 0, 1, 'L');
-
     // columna4
     $pdf->SetXY(75.5, 12);
     $pdf->Cell(15, 1.5, 'PLACA', 0, 1, 'L');
@@ -240,12 +230,10 @@
     $pdf->Cell(20, 1.4, 'SECRETARIA DE PLANEACION Y FINANZAS', 0, 0, 'L');
     $pdf->Image('../temp/tarjetas/recursos/poderEjecutivo.jpg', 12, 43, 0, 12);
     $pdf->Image('../temp/tarjetas/recursos/qroEsta.png', 38, 46, 0, 6);
-    //QR
-    $tempDir = "C:/xampp/htdocs/controlVehicular/QR/".$RFC.".png"; //Guarda QR en dir
+    $tempDir = $rutaQR.$RFC.".png"; //Guarda QR en dir
     $nivel = 'H';
     $tamaño = 5;
     $marco = 0;
-    
     $informacion = "Propietario: ".$nombre."\n";
     $informacion .= "RFC: ".$RFC."\n";
     $informacion .= "VEHICULO: ".$marca." ".$modelo." ".$linea." ".$sublinea."\n";
@@ -254,19 +242,6 @@
     $informacion .= "Combustible: ".$combustible."\n";
     $informacion .= "Origen: ".$origen."\n";
     QRcode::png($informacion, $tempDir, $nivel, $tamaño);
-
-    $pdf->Image("C:/xampp/htdocs/controlVehicular/QR/".$RFC.".png", 81, 50, 12.5); //obtiene imagen de carpeta usa RFC
-
-    // // $pdf->Line(10, 43, 95, 43);
-    // // $pdf->Line(95, 0, 95, 74);
-    // $pdf->Line(105, 0, 105, 148);
-    // $pdf->Line(0, 74, 210, 74);
-    // $pdf->Line(10, 0, 10, 74);
-    // $pdf->Line(95, 0, 95, 74);
-    // $pdf->Line(115, 0, 115, 74);
-    // $pdf->Line(200, 0, 200, 74);
-    // $pdf->Line(0, 10, 210, 10);
-    // $pdf->Line(0, 64, 210, 64); //95,64
-
-    $pdf->Output('F', 'C:/xampp/htdocs/controlVehicular/temp/tarjetas/'.$RFC.'.pdf', true); // 'F' Guarda pdf en dir tep
+    $pdf->Image($rutaQR.$idVehiculo.".png", 81, 50, 12.5); //obtiene imagen de carpeta usa RFC
+    $pdf->Output('F', $rutaTarjeta.$idVehiculo.'.pdf', true); // 'F' Guarda pdf en dir tep
 ?>

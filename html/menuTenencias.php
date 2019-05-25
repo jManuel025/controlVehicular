@@ -9,9 +9,6 @@
         <div>
             <a href="">Modificación</a>
         </div>
-        <!-- <div>
-            <a href="">Genera PDF</a>
-        </div> -->
         <div>
             <a href="../php/FCTenencias.php">Consultas</a>
         </div>

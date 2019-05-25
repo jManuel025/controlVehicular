@@ -9,9 +9,6 @@
         <div>
             <a href="../php/FUVehiculos.php">Modificación</a>
         </div>
-        <!-- <div>
-            <a href="">Genera PDF</a>
-        </div> -->
         <div>
             <a href="../php/FCVehiculos.php">Consultas</a>
         </div>

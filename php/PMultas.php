@@ -26,7 +26,7 @@
 	if ($cambio == True){
 		print("Registro exitoso");
 		$folio = mysqli_insert_id($Con);
-		$multas = new SimpleXMLElement('C:\xampp\htdocs\controlVehicular\temp\XML\multas.xml', null, true);
+		$multas = new SimpleXMLElement($rutaXML.'multas.xml', null, true);
 		$nuevaMulta = $multas->addChild('multa');
 		$nuevaMulta->addChild('folio', $folio);
 		$nuevaMulta->addChild('vehiculo', $Vehiculo);
@@ -36,10 +36,10 @@
 		$nuevaMulta->addChild('fecha', $Fecha);
 		$nuevaMulta->addChild('idOficial', $Motivo);
 		$nuevaMulta->addChild('hora', $Hora);
-		$multas->asXML('C:\xampp\htdocs\controlVehicular\temp\XML\multas.xml');
+		$multas->asXML($rutaXML.'multas.xml');
 
 		require('barcode.php');
-		$filepath = 'C:/xampp/htdocs/controlVehicular/barras/'.$folio.'.png';
+		$filepath = $rutaBarras.$folio.'.png';
 		$text=$folio;
 		$size=40;
 		$orientation="horizontal";

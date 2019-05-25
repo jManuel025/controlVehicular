@@ -19,7 +19,8 @@
 	$rutas = parse_ini_file("configuracion.init");
 	$rutaLicencia = $rutas['licencias'];
 	$rutaTarjeta = $rutas['tarjetas'];
-	$rutaPDF = $rutas['pdf'];
+	$rutaMultas = $rutas['multas'];
+	$rutaVerificaciones = $rutas['verificaciones'];
 	$rutaXML = $rutas['xml'];
 	$rutaQR = $rutas['qr'];
 	$rutaBarras = $rutas['barras'];

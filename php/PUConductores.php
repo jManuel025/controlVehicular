@@ -37,8 +37,8 @@
 	include("conexion.php");
 	$Con = Conectar();
 	$SQL = "UPDATE conductores SET CURP='$CURP',nombre='$Nombre',direccion='$Direccion',firma='$location2',donador='$Donador',tSangre='$tSangre',restriccion='$Restriccion',tEmergencia='$telEmergencia',fNacimiento='$fNacimiento' WHERE curp ='$CURP';";
-	$cambio = Consulta($Con, $SQL);p
-	if ($cambio == True){
+	$cambio = Consulta($Con, $SQL);
+	if($cambio == True){
 		print("Cambio exitoso");	
 	}
 	else{

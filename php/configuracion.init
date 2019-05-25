@@ -17,9 +17,9 @@
 ;ruta para guardar Tarjetas
 	tarjetas = "C:\xampp\htdocs\controlVehicular\temp\tarjetas\"
 ;ruta para guardar multas
-	pdf = "C:\xampp\htdocs\controlVehicular\temp\multas\"
+	multas = "C:\xampp\htdocs\controlVehicular\temp\multas\"
 ;ruta para guardar verificaciones
-	pdf = "C:\xampp\htdocs\controlVehicular\temp\verificaciones\"
+	verificaciones = "C:\xampp\htdocs\controlVehicular\temp\verificaciones\"
 ;ruta para guardar XML
 	xml = "C:\xampp\htdocs\controlVehicular\temp\XML\"
 ;ruta para guardar QR

@@ -45,9 +45,10 @@
 	$cambio = Consulta($Con, $SQL);
 	if ($cambio == True){
 		print("Registro exitoso");
+		$idVehiculo = mysqli_insert_id($Con);
 		$vehiculos = new SimpleXMLElement('C:\xampp\htdocs\controlVehicular\temp\XML\vehiculos.xml', null, true);
 		$nuevoVehiculo = $vehiculos->addChild('vehiculo');
-		// $nuevoVehiculo->addChild('idVehiculo', $idVehiculo);
+		$nuevoVehiculo->addChild('idVehiculo', $idVehiculo);
 		$nuevoVehiculo->addChild('propietario', $Propietario);
 		$nuevoVehiculo->addChild('placa', $Placa);
 		$nuevoVehiculo->addChild('tipo', $Tipo);
@@ -67,7 +68,7 @@
 		$nuevoVehiculo->addChild('combustible', $Combustible);
 		$nuevoVehiculo->addChild('origen', $Origen);
 		$vehiculos->asXML('C:\xampp\htdocs\controlVehicular\temp\XML\vehiculos.xml');
-	
+		include('formatoTarjeta.php');
 	}
 	else{
 		$cont = mysqli_affected_rows($Con);

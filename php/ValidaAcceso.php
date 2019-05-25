@@ -87,7 +87,7 @@ if ($n == 0) {
 				$_SESSION['username'] = $username;
 				$_SESSION['validacion'] = True;
 				$_SESSION['tiempo'] = time();
-				header("Location:../index1.php");
+				header("Location:../html/menu.php");
 				//CAMBIAR A PLANTILLA
 			} else {
 				echo "<div id='error'>

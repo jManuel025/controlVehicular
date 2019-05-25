@@ -2,10 +2,6 @@
 <div class="contenido">
   <form action="../php/PLicencias.php" method="post" enctype="multipart/form-data" name="form1" id="form1">
     <h1>Licencias</h1>
-    <!-- <label>
-        <p>ID Licencia:</p>
-        <input name="idLicencia" type="number" id="idLicencia" required />
-      </label> -->
     <label>
       <p>Conductor:</p>
       <input name="conductor" type="text" id="conductor" required placeholder="AAAA000000AAAAAA00" />

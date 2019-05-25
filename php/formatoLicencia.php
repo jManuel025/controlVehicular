@@ -1,9 +1,9 @@
 <?php
-    include('conexion.php');
+    // include('conexion.php');
     require('fpdf.php');
     include('phpqrcode/qrlib.php');
     $Con = Conectar();
-    $idLicencia = 94;
+    // $idLicencia = 94;
     $sql = "SELECT idLicencia, nombre, fNacimiento, fExpedicion, fVencimiento, tipo, firma, direccion, restriccion, tSangre, donador, tEmergencia, foto
             FROM conductores c, licencias l
             WHERE l.conductor = c.CURP AND idLicencia = $idLicencia;";
@@ -15,15 +15,15 @@
     $fExpedicion = $fila[3];
     $fVencimiento = $fila[4];
     $tipo = $fila[5];
-    $firma = $fila[6]; //falta extension
+    $firma = $fila[6]; 
     $direccion = $fila[7];
     $restriccion = $fila[8];
     $tSangre = $fila[9];
     $donador = $fila[10];
     if($donador == 1){$donador = "Si";} else{$donador = "No";}
     $tEmergencia = $fila[11];
-    $foto = $fila[12]; //falta extension
-    Desconectar($Con);
+    $foto = $fila[12]; 
+    // Desconectar($Con);
     
     $pdf = new FPDF();
     $pdf->AddPage('P', 'A5');
@@ -186,7 +186,7 @@
     $pdf->Image("../temp/licencias/recursos/mapaqroR.png", 92, 76.5, 10);
     $pdf->Image('../temp/licencias/recursos/secSeg.jpg', 119, 82.5, 15);
 
-    $tempDir = "C:/xampp/htdocs/controlVehicular/QR/".$idLicencia.".png"; //Guarda QR en dir
+    $tempDir = $rutaQR.$idLicencia.".png"; //Guarda QR en dir
     $nivel = 'H';
     $tamaño = 5;
     $marco = 0;
@@ -199,6 +199,6 @@
     $informacion .= "Dirección: ".$direccion."\n";
     QRcode::png($informacion, $tempDir, $nivel, $tamaño);
     $pdf->Image($tempDir, 86, 45.5, 15);
-    $pdf->Output('I', 'C:/xampp/htdocs/controlVehicular/temp/licencias/'.$idLicencia.'.pdf', true);
+    $pdf->Output('F', $rutaLicencia.$idLicencia.'.pdf', true);
     
 ?>

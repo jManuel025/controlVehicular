@@ -18,9 +18,9 @@
     <div class="dictamen">
       <p>Dictamen:</p>
       <div class="radio">
-        <input name="dictamen" type="radio" value="Aprobado" id="apueba" checked />
+        <input name="dictamen" type="radio" value="1" id="apueba" checked />
         <label for="aprueba">Aprobado</label>
-        <input name="dictamen" type="radio" value="Reprobado" id="reprueba" />
+        <input name="dictamen" type="radio" value="0" id="reprueba" />
         <label for="aprueba">Reprobado</label>
       </div>
     </div>

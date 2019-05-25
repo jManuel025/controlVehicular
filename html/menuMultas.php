@@ -6,12 +6,6 @@
         <div>
             <a href="../php/FEMultas.php">Eliminación</a>
         </div>
-        <!-- <div>
-            <a href="">Cambios</a>
-        </div> -->
-        <!-- <div>
-            <a href="">Genera PDF</a>
-        </div> -->
         <div>
             <a href="../php/FCMultas.php">Consultas</a>
         </div>
