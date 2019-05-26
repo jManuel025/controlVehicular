@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 include("../html/FAcceso.php");
 session_start();
 include("conexion.php");

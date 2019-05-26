@@ -1,5 +1,6 @@
 <?php include("headerNav.php")?>
     <div class="contenido">
+        <h1>Propietarios</h1>
         <div>
             <a href="FPropietarios.php">Registro</a>
         </div>

@@ -1,5 +1,6 @@
 <?php include("headerNav.php")?>
     <div class="contenido">
+        <h1>Verificaciones</h1>
         <div>
             <a href="FVerificaciones.php">Registro</a>
         </div>
