@@ -46,6 +46,16 @@
 	if ($cambio == True){
 		print("Registro exitoso");
 		$idVehiculo = mysqli_insert_id($Con);
+
+		//ODBC ACCESS
+		$dsn = "respaldoVehiculos";
+		$user = "";
+		$pass = "";
+		$odbcCon = odbc_connect($dsn, $user, $pass);
+		$odbcSQL = "INSERT INTO vehiculos VALUES ('$idVehiculo','$Propietario','$Placa','$Tipo','$Modelo','$Year','$Uso','$Color','$Puertas','$Marca','$Transmision','$capCarga','$Serie','$numMotor','$Linea','$Sublinea','$Cilindraje','$Combustible','$Origen');";
+		$odbcQuery = odbc_exec($odbcCon, $odbcSQL);
+		odbc_close($odbcCon);
+
 		$vehiculos = new SimpleXMLElement('C:\xampp\htdocs\controlVehicular\temp\XML\vehiculos.xml', null, true);
 		$nuevoVehiculo = $vehiculos->addChild('vehiculo');
 		$nuevoVehiculo->addChild('idVehiculo', $idVehiculo);

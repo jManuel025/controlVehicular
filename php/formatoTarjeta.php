@@ -242,6 +242,6 @@
     $informacion .= "Combustible: ".$combustible."\n";
     $informacion .= "Origen: ".$origen."\n";
     QRcode::png($informacion, $tempDir, $nivel, $tamaño);
-    $pdf->Image($rutaQR.$idVehiculo.".png", 81, 50, 12.5); //obtiene imagen de carpeta usa RFC
+    $pdf->Image($rutaQR.$RFC.".png", 81, 50, 12.5); //obtiene imagen de carpeta usa RFC
     $pdf->Output('F', $rutaTarjeta.$idVehiculo.'.pdf', true); // 'F' Guarda pdf en dir tep
 ?>
