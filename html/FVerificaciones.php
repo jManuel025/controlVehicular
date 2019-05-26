@@ -35,3 +35,12 @@
 </body>
 
 </html>
+<?php 
+if(isset($_GET["hecho"])){
+if($_GET["hecho"]==1){
+  print("Registro realizado con éxito");
+
+}elseif ($_GET["hecho"]==0) {
+  print("Error en el registro");
+} } 
+?>

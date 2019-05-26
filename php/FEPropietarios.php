@@ -22,8 +22,8 @@ if (isset($_POST['RFC'])) {
 	$SQL = "DELETE FROM Propietarios WHERE RFC = '$RFC';";
 	Consulta($con, $SQL);
 	$eliminacion = mysqli_affected_rows($con);
-	if ($eliminacion < 0) {
-		$eliminacion += 1;
+	if ($eliminacion == 0) {
+		
 		print($eliminacion . " eliminaciones realizadas, Eliminación fallida");
 	} else {
 		print($eliminacion . " eliminaciones realizadas, Eliminación exitosa");

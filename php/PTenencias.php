@@ -15,11 +15,13 @@
 	$cambio = Consulta($Con, $SQL);
 	if ($cambio == True){
 		print("Registro exitoso");	
+		header("Location:../html/FTenencias.php?hecho=1");
 	}
 	else{
 		$cont = mysqli_affected_rows($Con);
 		print($cont + 1);
 		print(" tablas afectadas. Registro fallido");	
+		header("Location:../html/FTenencias.php?hecho=0");
 	}
 	Desconectar($Con);
 ?>

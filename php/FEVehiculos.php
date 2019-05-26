@@ -22,7 +22,7 @@ if (isset($_POST['idVehiculo'])) {
 	$SQL = "DELETE FROM Vehiculos WHERE idVehiculo = '$idVehiculo';";
 	Consulta($con, $SQL);
 	$eliminacion = mysqli_affected_rows($con);
-	if ($eliminacion < 0) {
+	if ($eliminacion == 0) {
 		// $eliminacion += 1;
 		print($eliminacion . " eliminaciones realizadas, Eliminación fallida");
 	} else {

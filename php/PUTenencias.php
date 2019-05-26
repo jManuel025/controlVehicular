@@ -17,11 +17,13 @@
 	$cambio = Consulta($Con, $SQL);
 	if ($cambio == True){
 		print("Cambio exitoso");	
+		header("Location:FUTenencias.php?hecho=1");	
 	}
 	else{
 		
 		
 		print(" 0 tablas afectadas. Cambio fallido");	
+		header("Location:FUTenencias.php?hecho=0");	
 	}
 	Desconectar($Con);
 ?>

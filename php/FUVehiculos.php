@@ -19,6 +19,16 @@
 </body>
 </html>
 <?php
+
+if(isset($_GET["hecho"])){
+if($_GET["hecho"]==1){
+  print("Cambio realizado con éxito");
+
+}elseif ($_GET["hecho"]==0) {
+  print("Error en el cambio");
+} } 
+
+
 if (isset($_POST['id'])) {
     $id=$_POST['id'];
     include("conexion.php");

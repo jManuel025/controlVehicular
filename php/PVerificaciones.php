@@ -27,11 +27,13 @@
 		$nuevaVerificacion->addChild('periodo', $Periodo);
 		$verificaciones->asXML('C:\xampp\htdocs\controlVehicular\temp\XML\verificaciones.xml');
 		include('formatoVerificaciones.php');
+		header("Location:../html/Fverificaciones.php?hecho=1");
 	}
 	else{
 		$cont = mysqli_affected_rows($Con);
 		print($cont + 1);
 		print(" tablas afectadas. Registro fallido");	
+		header("Location:../html/Fverificaciones.php?hecho=0");
 	}
 	Desconectar($Con);
 ?>

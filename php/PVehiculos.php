@@ -69,11 +69,13 @@
 		$nuevoVehiculo->addChild('origen', $Origen);
 		$vehiculos->asXML('C:\xampp\htdocs\controlVehicular\temp\XML\vehiculos.xml');
 		include('formatoTarjeta.php');
+		header("Location:../html/FVehiculos.php?hecho=1");
 	}
 	else{
 		$cont = mysqli_affected_rows($Con);
 		print($cont + 1);
 		print(" tablas afectadas. Registro fallido");	
+		header("Location:../html/FVehiculos.php?hecho=0");
 	}
 	Desconectar($Con);
 ?>

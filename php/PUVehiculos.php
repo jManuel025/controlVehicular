@@ -51,11 +51,13 @@
 		$cambioVehiculo = $vehiculosC->addChild('cambiosID');
 		$cambioVehiculo->addChild('idCambio', $id);
 		$vehiculosC->asXML('C:\xampp\htdocs\controlVehicular\temp\XML\vehiculosC.xml');
+		header("Location:FUVehiculos.php?hecho=1");	
 	}
 	else{
 		
 		
 		print(" 0 tablas afectadas. Cambio fallido");	
+		header("Location:FUVehiculos.php?hecho=0");	
 	}
 	Desconectar($Con);
  ?>

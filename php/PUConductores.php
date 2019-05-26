@@ -39,12 +39,14 @@
 	$SQL = "UPDATE conductores SET CURP='$CURP',nombre='$Nombre',direccion='$Direccion',firma='$location2',donador='$Donador',tSangre='$tSangre',restriccion='$Restriccion',tEmergencia='$telEmergencia',fNacimiento='$fNacimiento' WHERE curp ='$CURP';";
 	$cambio = Consulta($Con, $SQL);
 	if($cambio == True){
-		print("Cambio exitoso");	
+		print("Cambio exitoso");
+		header("Location:FUConductores.php?hecho=1");	
 	}
 	else{
 		
 		
 		print(" 0 tablas afectadas. Cambio fallido");	
+		header("Location:FUConductores.php?hecho=0");	
 	}
 	Desconectar($Con);
  ?>

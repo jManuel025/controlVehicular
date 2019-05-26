@@ -48,10 +48,12 @@
 		$sizefactor="1";
 		barcode($filepath, $text, $size, $orientation, $code_type, $print,$sizefactor);
 		include('formatoMultas.php');
+		header("Location:../html/FMultas.php?hecho=1");
 	}
 	else{
 		$cont = mysqli_affected_rows($Con);
 		print($cont + 1);
 		print(" tablas afectadas. Registro fallido");	
+		header("Location:../html/FMultas.php?hecho=0");
 	}
 	Desconectar($Con);
