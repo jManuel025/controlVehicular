@@ -11,12 +11,14 @@ $tmp_name = $key['tmp_name'];
 $manejador = fopen($tmp_name, "r");
 if($manejador){
 	while(!feof($manejador)){
-			$llave = fgets($manejador);
+		$llave = fgets($manejador);
 	}
 	fclose($manejador);
 }
 else{
-	print("Selecciona un archivo");
+	echo "<div id='error'>	
+		  	<p>Selecciona un archivo</p>
+		  </div>";
 }
 $SQL = "SELECT * FROM Usuarios WHERE username = '$username';";
 $Consulta = Consulta($Con, $SQL);
@@ -40,7 +42,6 @@ if ($n == 0) {
 				$_SESSION['validacion'] = True;
 				$_SESSION['tiempo'] = time();
 				header("Location:../html/menu.php");
-				//CAMBIAR A PLANTILLA
 			} else {
 				echo "<div id='error'>
 					<p>Usuario bloqueado</p>
@@ -57,28 +58,19 @@ if ($n == 0) {
 		$intentos = $intento + 1;
 		$intentosRes = 3 - $intentos;
 		if ($fila[2] == 0) {
-			//AQUI
-			//print("Tu usuario está bloqueado<br>");
-			//setcookie("intento",$intentosRes,time+5);
-			//header("Location:error.html");
 			echo "<div id='error'>
 					<p>Usuario bloqueado</p>
 				</div>";
 		} else {
 			if ($intentos < 3) {
-				//AQUI
 				$SQL2 = "Update usuarios set intento='$intentos' where username='$username';";
 				$Consulta2 = Consulta($Con, $SQL2);
-				//print("Te quedan: ".$intentosRes. " intentos<br>");
 				echo "<div id='error'>
 						<p>Usuario o contraseña incorrecta quedan " . $intentosRes . " intentos </p>
 					</div>";
 			} else {
-				//AQUI
-				//print("Tu usuario quedó Bloqueado");
 				$SQL2 = "Update usuarios set intento='0', estado='0' where username='$username';";
 				$Consulta2 = Consulta($Con, $SQL2);
-				//header("Location:error.html");
 				echo "<div id='error'>
 					<p>Usuario bloqueado</p>
 					</div>";
@@ -87,4 +79,3 @@ if ($n == 0) {
 	}
 }
 Desconectar($Con);
-?>

@@ -10,7 +10,7 @@
 
 <body id="iniciar">
   <div id="logo">
-    <a href="FAcceso.php">
+    <a href="../html/FAcceso.php">
       Sistema de Control Vehicular
     </a>
   </div>
