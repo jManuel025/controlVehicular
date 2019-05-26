@@ -52,11 +52,13 @@
 		$nuevaLicencia->addChild('expide', $Expide);
 		$licencias->asXML($rutaXML.'licencias.xml');
 		include('formatoLicencia.php');
+		header("Location:../html/FLicencias.php?hecho=1");
 	}
 	else{
 		$cont = mysqli_affected_rows($Con);
 		print($cont + 1);
 		print(" tablas afectadas. Registro fallido");	
+		header("Location:../html/FLicencias.php?hecho=0");
 	}
 	Desconectar($Con);
 ?>
