@@ -8,7 +8,7 @@
 	$extension = end($prevExt);
 	$Firma['name'] = $CURP.".".$extension;
 	$name = $Firma['name'];
-	$location = "C:/xampp/htdocs/controlVehicular/firmas/";
+	$location = $rutaFirmas;
 	$tmp_name = $Firma['tmp_name'];
 	move_uploaded_file($tmp_name, $location.$name);
 	$location2=$location.$CURP.".".$extension;

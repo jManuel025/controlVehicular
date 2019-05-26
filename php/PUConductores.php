@@ -10,7 +10,7 @@
 	// }
 	$_FILES['firma']['name'] = $CURP.".png";
 	$name = $_FILES['firma']['name'];
-	$location = "C:/xampp/htdocs/DAAD267794/controlVehicular/Archivos/firmas/";
+	$location = $rutaFirmas;
 	$tmp_name = $_FILES['firma']['tmp_name'];
 	move_uploaded_file($tmp_name, $location.$name);
 	$location2=$location.$CURP;

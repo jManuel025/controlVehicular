@@ -2,7 +2,7 @@
     // include('conexion.php');
     require('fpdf.php');
     include('phpqrcode/qrlib.php');
-    $Con = Conectar();
+    // $Con = Conectar();
     // $idLicencia = 94;
     $sql = "SELECT idLicencia, nombre, fNacimiento, fExpedicion, fVencimiento, tipo, firma, direccion, restriccion, tSangre, donador, tEmergencia, foto
             FROM conductores c, licencias l

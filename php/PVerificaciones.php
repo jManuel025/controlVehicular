@@ -18,14 +18,14 @@
 	if ($cambio == True){
 		print("Registro exitoso");	
 		$idVerificacion = mysqli_insert_id($Con);
-		$verificaciones = new SimpleXMLElement('C:\xampp\htdocs\controlVehicular\temp\XML\verificaciones.xml', null, true);
+		$verificaciones = new SimpleXMLElement($rutaXML.'verificaciones.xml', null, true);
 		$nuevaVerificacion = $verificaciones->addChild('verificacion');
 		$nuevaVerificacion->addChild('id', $idVerificacion);
 		$nuevaVerificacion->addChild('vehiculo', $Vehiculo);
 		$nuevaVerificacion->addChild('fecha', $Fecha);
 		$nuevaVerificacion->addChild('dictamen', $Dictamen);
 		$nuevaVerificacion->addChild('periodo', $Periodo);
-		$verificaciones->asXML('C:\xampp\htdocs\controlVehicular\temp\XML\verificaciones.xml');
+		$verificaciones->asXML($rutaXML.'verificaciones.xml');
 		include('formatoVerificaciones.php');
 		header("Location:../html/Fverificaciones.php?hecho=1");
 	}

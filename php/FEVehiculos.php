@@ -28,10 +28,10 @@ if (isset($_POST['idVehiculo'])) {
 	} else {
 		// $eliminacion += 1;
 		print($eliminacion . " eliminaciones realizadas, Eliminación exitosa");
-		$vehiculosB = new SimpleXMLElement('C:\xampp\htdocs\controlVehicular\temp\XML\vehiculosB.xml', null, true);
+		$vehiculosB = new SimpleXMLElement($rutaXML.'vehiculosB.xml', null, true);
 		$bajaVehiculo = $vehiculosB->addChild('bajasID');
 		$bajaVehiculo->addChild('idBaja', $idVehiculo);
-		$vehiculosB->asXML('C:\xampp\htdocs\controlVehicular\temp\XML\vehiculosB.xml');
+		$vehiculosB->asXML($rutaXML.'vehiculosB.xml');
 	}
 	Desconectar($con);
 }

@@ -47,10 +47,10 @@
 	$cambio = Consulta($Con, $SQL);
 	if ($cambio == True){
 		print("Cambio exitoso");	
-		$vehiculosC = new SimpleXMLElement('C:\xampp\htdocs\controlVehicular\temp\XML\vehiculosC.xml', null, true);
+		$vehiculosC = new SimpleXMLElement($rutaXML.'vehiculosC.xml', null, true);
 		$cambioVehiculo = $vehiculosC->addChild('cambiosID');
 		$cambioVehiculo->addChild('idCambio', $id);
-		$vehiculosC->asXML('C:\xampp\htdocs\controlVehicular\temp\XML\vehiculosC.xml');
+		$vehiculosC->asXML($rutaXML.'vehiculosC.xml');
 		header("Location:FUVehiculos.php?hecho=1");	
 	}
 	else{

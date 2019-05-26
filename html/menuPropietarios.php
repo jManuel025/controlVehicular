@@ -4,10 +4,10 @@
             <a href="FPropietarios.php">Registro</a>
         </div>
         <div>
-            <a href="../php/FEPropietarios.php">Modificación</a>
+            <a href="../php/FEPropietarios.php">Eliminación</a>
         </div>
         <div>
-            <a href="">Eliminación</a>
+            <a href="../php/FUPropietarios.php">Modificación</a>
         </div>
         <div>
             <a href="../php/FCLicencias.php">Consulta</a>

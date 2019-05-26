@@ -7,7 +7,7 @@
             <a href="../php/FETenencias.php">Eliminación</a>
         </div>
         <div>
-            <a href="">Modificación</a>
+            <a href="../php/FUTenencias.php">Modificación</a>
         </div>
         <div>
             <a href="../php/FCTenencias.php">Consultas</a>

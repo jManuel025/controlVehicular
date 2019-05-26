@@ -56,7 +56,7 @@
 		$odbcQuery = odbc_exec($odbcCon, $odbcSQL);
 		odbc_close($odbcCon);
 
-		$vehiculos = new SimpleXMLElement('C:\xampp\htdocs\controlVehicular\temp\XML\vehiculos.xml', null, true);
+		$vehiculos = new SimpleXMLElement($rutaXML.'vehiculos.xml', null, true);
 		$nuevoVehiculo = $vehiculos->addChild('vehiculo');
 		$nuevoVehiculo->addChild('idVehiculo', $idVehiculo);
 		$nuevoVehiculo->addChild('propietario', $Propietario);
@@ -77,7 +77,7 @@
 		$nuevoVehiculo->addChild('cilindraje', $Cilindraje);
 		$nuevoVehiculo->addChild('combustible', $Combustible);
 		$nuevoVehiculo->addChild('origen', $Origen);
-		$vehiculos->asXML('C:\xampp\htdocs\controlVehicular\temp\XML\vehiculos.xml');
+		$vehiculos->asXML($rutaXML.'vehiculos.xml');
 		include('formatoTarjeta.php');
 		header("Location:../html/FVehiculos.php?hecho=1");
 	}

@@ -1,39 +1,3 @@
-<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-  <title>Sistema de Control Vehicular</title>
-  <link rel="stylesheet" type="text/css" href="./assets/css/style.css" media="all">
-</head>
-
-<body id="iniciar">
-  <div id="logo">
-        <a href="index.php">
-          Sistema de Control Vehicular
-        </a>
-  </div>
-  <div id="login" class="bloque">
-    <h3>Identificate</h3>
-    <form id="inicio" name="form1" method="post" action="ValidaAcceso.php">
-      <label>Username
-      <input name="username" type="text" id="username" />
-      </label>
-      <p>
-        <label>Password
-        <input name="password" type="text" id="password" />
-        </label>
-      </p>
-      <p> 
-        <label>
-        <input type="submit" name="Submit" value="Entrar" />
-        </label>
-      </p>
-    </form>
-  </div>
-</body>
-</html>
- -->
-
 <?php
 include("../html/FAcceso.php");
 session_start();
@@ -42,13 +6,7 @@ $Con = Conectar();
 $username = $_POST['username'];
 $password = $_POST['password'];
 $key = $_FILES['llave'];
-
-// $key['name'] = $username.".txt";
-// $name = $key['name'];
-// $location = "C:/xampp/htdocs/controlVehicular/php/llaves/";
 $tmp_name = $key['tmp_name'];
-// move_uploaded_file($tmp_name, $location.$name);
-// $location2 = $location.$username.".txt";
 $manejador = fopen($tmp_name, "r");
 if($manejador){
 	while(!feof($manejador)){
@@ -59,13 +17,6 @@ if($manejador){
 else{
 	print("Selecciona un archivo");
 }
-
-
-
-
-
-//print("Userame: " . $username."<br>");
-//print("Pass: " . $password."<br>");
 $SQL = "SELECT * FROM Usuarios WHERE username = '$username';";
 $Consulta = Consulta($Con, $SQL);
 $n = mysqli_num_rows($Consulta);
@@ -134,9 +85,5 @@ if ($n == 0) {
 		}
 	}
 }
-
 Desconectar($Con);
-
-
-
 ?>
