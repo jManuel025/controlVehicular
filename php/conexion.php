@@ -1,4 +1,10 @@
 <?php  
+	// session_start();
+	// if ($_SESSION['validacion']) {
+	// 	header("refresh:600;url=/html/cerrarSesion.php");
+	// } else {
+	// 	header("Location: ./html/FAcceso.php");
+	// }
 	function Conectar(){
 		$Parametros = parse_ini_file("configuracion.init");
 		$ServerName = $Parametros['Server'];
@@ -26,4 +32,5 @@
 	$rutaBarras = $rutas['barras'];
 	// $rutaFirmas = $rutas['firmas'];
 	// $rutaFotos = $rutas['fotos'];
+	header("Location: ../html/FAcceso.php");
 ?>

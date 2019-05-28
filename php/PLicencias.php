@@ -45,27 +45,33 @@
 	$idLicencia = mysqli_insert_id($Con);
 	
 	print("ID asignado = ".$idLicencia."<br>");
-	if ($cambio == True){
-		print("Registro exitoso");
-		$licencias = new SimpleXMLElement($rutaXML.'licencias.xml', null, true);
-		$nuevaLicencia = $licencias->addChild('licencia');
-		$nuevaLicencia->addChild('id', $idLicencia);
-		$nuevaLicencia->addChild('conductor', $Conductor);
-		$nuevaLicencia->addChild('foto', $location2);
-		$nuevaLicencia->addChild('fecExpedicion', $fExpedicion);
-		$nuevaLicencia->addChild('tipo', $Tipo);
-		$nuevaLicencia->addChild('fecVence', $fVencimiento);
-		$nuevaLicencia->addChild('lugar', $Lugar);
-		$nuevaLicencia->addChild('expide', $Expide);
-		$licencias->asXML($rutaXML.'licencias.xml');
-		include('formatoLicencia.php');
-		header("Location:../html/FLicencias.php?hecho=1");
-	}
-	else{
-		$cont = mysqli_affected_rows($Con);
-		print($cont + 1);
-		print(" tablas afectadas. Registro fallido");	
-		header("Location:../html/FLicencias.php?hecho=0");
+	session_start();
+	if ($_SESSION['validacion']) {
+		header("refresh:600;url=/html/cerrarSesion.php");
+		if ($cambio == True){
+			print("Registro exitoso");
+			$licencias = new SimpleXMLElement($rutaXML.'licencias.xml', null, true);
+			$nuevaLicencia = $licencias->addChild('licencia');
+			$nuevaLicencia->addChild('id', $idLicencia);
+			$nuevaLicencia->addChild('conductor', $Conductor);
+			$nuevaLicencia->addChild('foto', $location2);
+			$nuevaLicencia->addChild('fecExpedicion', $fExpedicion);
+			$nuevaLicencia->addChild('tipo', $Tipo);
+			$nuevaLicencia->addChild('fecVence', $fVencimiento);
+			$nuevaLicencia->addChild('lugar', $Lugar);
+			$nuevaLicencia->addChild('expide', $Expide);
+			$licencias->asXML($rutaXML.'licencias.xml');
+			include('formatoLicencia.php');
+			header("Location:../html/FLicencias.php?hecho=1");
+		}
+		else{
+			$cont = mysqli_affected_rows($Con);
+			print($cont + 1);
+			print(" tablas afectadas. Registro fallido");	
+			header("Location:../html/FLicencias.php?hecho=0");
+		}
+	} else {
+		header("Location: ../html/FAcceso.php");
 	}
 	Desconectar($Con);
 ?>

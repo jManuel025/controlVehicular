@@ -1,4 +1,4 @@
-<?php 
+<?php
 	$CURP = $_POST["curp"];
 	$Nombre = $_POST["nombre"];
 	$Direccion = $_POST["direccion"];
@@ -34,15 +34,21 @@
 	$Con = Conectar();
 	$SQL = "INSERT INTO Conductores VALUES ('$CURP','$Nombre','$Direccion','$location2','$Donador','$tSangre','$Restriccion','$telEmergencia','$fNacimiento');";
 	$cambio = Consulta($Con, $SQL);
-	if ($cambio == True){
-		print("Registro exitoso");	
-		header("Location:../html/FConductores.php?hecho=1");
-	}
-	else{
-		$cont = mysqli_affected_rows($Con);
-		print($cont + 1);
-		print(" tablas afectadas. Registro fallido");	
-		header("Location:../html/FConductores.php?hecho=0");
-	}
+	session_start();
+    if ($_SESSION['validacion']) {
+		header("refresh:600;url=/html/cerrarSesion.php");
+			if ($cambio == True){
+				print("Registro exitoso");	
+				header("Location:../html/FConductores.php?hecho=1");
+			}
+			else{
+				$cont = mysqli_affected_rows($Con);
+				print($cont + 1);
+				print(" tablas afectadas. Registro fallido");	
+				header("Location:../html/FConductores.php?hecho=0");
+			}
+    } else {
+        header("Location: ../html/FAcceso.php");
+    }
 	Desconectar($Con);
 ?>

@@ -1,19 +1,17 @@
 <?php
 session_start();
 if ($_SESSION['validacion']) {
-    // print($_SESSION['username']);
     header("refresh:600;url=/html/cerrarSesion.php");
 } else {
-    header("Location: ./html/FAcceso.php");
+    header("Location: ../html/FAcceso.php");
 }
-// print("<br><a href = './html/cerrarSesion.php'>Cerrar sesión</a>");
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Front Proyecto Final</title>
+    <title>Sistema de control vehicular</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/-Filterable-Cards-.css">
@@ -29,14 +27,14 @@ if ($_SESSION['validacion']) {
     <div id="wrapper">
         <div class="flex-grow-0" id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li class="sidebar-brand"> <a class="text-center logo" href="index.html" style="color: #8fb8e4;">Sistema de control vehicular</a></li>
-                <li> <a href="HTML/menuConductores.php">Conductores</a></li>
-                <li> <a href="HTML/menuLicencias.php">Licencias</a></li>
-                <li> <a href="HTML/menuMultas.php">Multas</a></li>
-                <li> <a href="HTML/menuPropietarios.php">Propietarios</a></li>
-                <li> <a href="HTML/menuPropietarios.php">Tenencias</a></li>
-                <li> <a href="HTML/menuVehiculos.php">Vehiculos</a></li>
-                <li> <a href="HTML/menuVerificaciones.php">Verificaciones</a></li>
+                <li class="sidebar-brand"> <a class="text-center logo" href="#" style="color: #8fb8e4;">Sistema de control vehicular</a></li>
+                <li> <a href="html/menuConductores.php">Conductores</a></li>
+                <li> <a href="html/menuLicencias.php">Licencias</a></li>
+                <li> <a href="html/menuMultas.php">Multas</a></li>
+                <li> <a href="html/menuPropietarios.php">Propietarios</a></li>
+                <li> <a href="html/menuTenencias.php">Tenencias</a></li>
+                <li> <a href="html/menuVehiculos.php">Vehiculos</a></li>
+                <li> <a href="html/menuVerificaciones.php">Verificaciones</a></li>
             </ul>
         </div>
         <div class="page-content-wrapper">
@@ -44,7 +42,7 @@ if ($_SESSION['validacion']) {
                 <div class="d-flex justify-content-between align-items-center up-bar" style="background-color: #6387A6;height: 50px;"><a class="btn btn-link flex-grow-0" role="button" id="menu-toggle" href="#menu-toggle"><i class="fa fa-bars" style="color: #ffffff;font-size: 32px;"></i></a>
                     <div class="dropdown" style="margin-right: 10px;"><button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color: rgba(0,0,0,0);border-color: rgba(0,0,0,0);font-size: 28px;height: 49px;"><i class="fa fa-user"></i></button>
                         <div
-                            class="dropdown-menu dropdown-menu-left" role="menu" style="padding-right: 0px;margin-right: 50px;"><a class="dropdown-item" role="presentation" href="#">Ver usuario</a><a class="dropdown-item" role="presentation" href="#">Cerrar sesion</a></div>
+                            class="dropdown-menu dropdown-menu-left" role="menu" style="padding-right: 0px;margin-right: 50px;"><a class="dropdown-item" role="presentation" href="#">Ver usuario</a><a class="dropdown-item" role="presentation" href="html/cerrarSesion.php">Cerrar sesion</a></div>
                 </div>
             </div>
             <div class="row">

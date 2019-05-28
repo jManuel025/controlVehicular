@@ -1,3 +1,11 @@
+<?php
+session_start();
+if ($_SESSION['validacion']) {
+    header("refresh:600;url=/html/cerrarSesion.php");
+} else {
+    header("Location: ../html/FAcceso.php");
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -20,7 +28,7 @@
     <div id="wrapper">
         <div class="flex-grow-0" id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li class="sidebar-brand"> <a class="text-center logo" href="../index.html" style="color: #8fb8e4;">Sistema de control vehicular</a></li>
+                <li class="sidebar-brand"> <a class="text-center logo" href="../index.php" style="color: #8fb8e4;">Sistema de control vehicular</a></li>
                 <li> <a href="../HTML/menuConductores.php">Conductores</a></li>
                 <li> <a href="../HTML/menuLicencias.php">Licencias</a></li>
                 <li> <a href="../HTML/menuMultas.php">Multas</a></li>
@@ -35,7 +43,7 @@
                 <div class="d-flex justify-content-between align-items-center up-bar" style="background-color: #6387A6;height: 50px;"><a class="btn btn-link flex-grow-0" role="button" id="menu-toggle" href="#menu-toggle"><i class="fa fa-bars" style="color: #ffffff;font-size: 32px;"></i></a>
                     <div class="dropdown" style="margin-right: 10px;"><button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color: rgba(0,0,0,0);border-color: rgba(0,0,0,0);font-size: 28px;height: 49px;"><i class="fa fa-user"></i></button>
                         <div
-                            class="dropdown-menu dropdown-menu-left" role="menu" style="padding-right: 0px;margin-right: 50px;"><a class="dropdown-item" role="presentation" href="#">Ver usuario</a><a class="dropdown-item" role="presentation" href="#">Cerrar sesion</a></div>
+                            class="dropdown-menu dropdown-menu-left" role="menu" style="padding-right: 0px;margin-right: 50px;"><a class="dropdown-item" role="presentation" href="#">Ver usuario</a><a class="dropdown-item" role="presentation" href="../html/cerrarSesion.php">Cerrar sesion</a></div>
                 </div>
             </div>
             <div class="row">

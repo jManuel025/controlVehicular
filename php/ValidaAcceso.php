@@ -1,6 +1,6 @@
 <?php
 error_reporting(0);
-include("../html/FAcceso.php");
+// include("../html/FAcceso.php");
 session_start();
 include("conexion.php");
 $Con = Conectar();
@@ -41,7 +41,7 @@ if ($n == 0) {
 				$_SESSION['username'] = $username;
 				$_SESSION['validacion'] = True;
 				$_SESSION['tiempo'] = time();
-				header("Location:../html/menu.php");
+				header("Location:../index.php");
 			} else {
 				echo "<div id='error'>
 					<p>Usuario bloqueado</p>

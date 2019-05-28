@@ -20,7 +20,7 @@
     <div id="wrapper">
         <div class="flex-grow-0" id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li class="sidebar-brand"> <a class="text-center logo" href="../index.html" style="color: #8fb8e4;">Sistema de control vehicular</a></li>
+                <li class="sidebar-brand"> <a class="text-center logo" href="../index.php" style="color: #8fb8e4;">Sistema de control vehicular</a></li>
                 <li> <a href="menuConductores.php">Conductores</a></li>
                 <li> <a href="menuLicencias.php">Licencias</a></li>
                 <li> <a href="menuMultas.php">Multas</a></li>

@@ -1,4 +1,10 @@
 <?php
+        session_start();
+        if ($_SESSION['validacion']) {
+            header("refresh:600;url=/html/cerrarSesion.php");
+        } else {
+            header("Location: ../html/FAcceso.php");
+        }
         require('fpdf.php');
         $sql = "SELECT m.folio,m.vehiculo,m.Licencia,m.monto,m.lugar,m.fecha,m.motivo,m.idoficial,m.hora,v.propietario,v.placa
                         FROM multas m, vehiculos v

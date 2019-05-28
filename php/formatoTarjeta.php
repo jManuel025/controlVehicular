@@ -1,4 +1,10 @@
 <?php
+    session_start();
+    if ($_SESSION['validacion']) {
+        header("refresh:600;url=/html/cerrarSesion.php");
+    } else {
+        header("Location: ../html/FAcceso.php");
+    }
     require('fpdf.php');
     include('phpqrcode/qrlib.php');
     $sql = "SELECT uso, nombre, RFC, serie, marca, linea, sublinea, cilindraje, capCarga, puerta, combustible, transmision, placa, modelo, numMotor, origen, color
