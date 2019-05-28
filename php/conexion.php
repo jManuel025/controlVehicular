@@ -32,5 +32,5 @@
 	$rutaBarras = $rutas['barras'];
 	// $rutaFirmas = $rutas['firmas'];
 	// $rutaFotos = $rutas['fotos'];
-	header("Location: ../html/FAcceso.php");
+	// header("Location: ../html/FAcceso.php");
 ?>
