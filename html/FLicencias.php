@@ -62,14 +62,14 @@ if ($_SESSION['validacion']) {
     </label>
         </div>
       </div>
-    <div class="firma">
+    <!-- <div class="firma">
       <p>Foto:</p>
       <div class="file">
         <p>Seleccionar archivo</p>
-        <!-- <label for="firma">Seleccionar archivo</label> -->
+        <label for="firma">Seleccionar archivo</label>
         <input type="file" name="foto" id="foto" required="">
       </div>
-    </div>
+    </div> -->
     <div class="row datos-principales">
         <div class="col"></div>
         

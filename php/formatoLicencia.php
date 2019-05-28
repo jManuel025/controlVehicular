@@ -1,7 +1,7 @@
 <?php
     session_start();
     if ($_SESSION['validacion']) {
-        header("refresh:600;url=/html/cerrarSesion.php");
+        header("refresh:600;url=../html/cerrarSesion.php");
     } else {
         header("Location: ../html/FAcceso.php");
     }
@@ -10,7 +10,7 @@
     include('phpqrcode/qrlib.php');
     // $Con = Conectar();
     // $idLicencia = 94;
-    $sql = "SELECT idLicencia, nombre, fNacimiento, fExpedicion, fVencimiento, tipo, firma, direccion, restriccion, tSangre, donador, tEmergencia, foto
+    $sql = "SELECT idLicencia, nombre, fNacimiento, fExpedicion, fVencimiento, tipo, firma, direccion, restriccion, tSangre, donador, tEmergencia, c.foto
             FROM conductores c, licencias l
             WHERE l.conductor = c.CURP AND idLicencia = $idLicencia;";
     $query = Consulta($Con, $sql);   

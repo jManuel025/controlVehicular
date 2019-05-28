@@ -69,7 +69,13 @@
                                 <input type="file" name="firma" id="firma" required="" class="choose-file">
                             </div>
                         </div>
-
+                        <div class="firma">
+                            <p>Foto:</p>
+                            <div class="file">
+                                <p>Seleccionar archivo con la fotografía</p>
+                                <input type="file" name="foto" id="foto" required="" class="choose-file">
+                            </div>
+                        </div>
                         <div class="row sangre">
                             <div class="column col-md-3">
                             </div>
@@ -77,9 +83,9 @@
                                 <div class="donador">
                                     <p>Donador:</p>
                                     <div class="radio">
-                                        <input name="donador" type="radio" value="Si" id="si" checked="">
+                                        <input name="donador" type="radio" value="1" id="si" checked="">
                                         <label for="si">Si</label>
-                                        <input name="donador" type="radio" value="No" id="no">
+                                        <input name="donador" type="radio" value="0" id="no">
                                         <label for="no">No</label>
                                     </div>
                                 </div>
