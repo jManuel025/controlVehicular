@@ -24,6 +24,6 @@
 	$rutaXML = $rutas['xml'];
 	$rutaQR = $rutas['qr'];
 	$rutaBarras = $rutas['barras'];
-	$rutaFirmas = $rutas['firmas'];
-	$rutaFotos = $rutas['fotos'];
+	// $rutaFirmas = $rutas['firmas'];
+	// $rutaFotos = $rutas['fotos'];
 ?>

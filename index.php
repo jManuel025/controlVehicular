@@ -1,3 +1,13 @@
+<?php
+session_start();
+if ($_SESSION['validacion']) {
+    // print($_SESSION['username']);
+    header("refresh:600;url=/html/cerrarSesion.php");
+} else {
+    header("Location: ./html/FAcceso.php");
+}
+// print("<br><a href = './html/cerrarSesion.php'>Cerrar sesión</a>");
+?>
 <!DOCTYPE html>
 <html>
 <head>

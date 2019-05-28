@@ -27,6 +27,6 @@
 ;ruta para guardar barras
 	barras = "C:\xampp\htdocs\controlVehicular\barras\"
 ;ruta para guardar firmas
-	firmas = "C:\xampp\htdocs\controlVehicular\firmas\"
+	;firmas = "C:\xampp\htdocs\controlVehicular\firmas\"
 ;ruta para guardar fotos
-	fotos = "C:\xampp\htdocs\controlVehicular\fotos\"
+	;fotos = "C:\xampp\htdocs\controlVehicular\fotos\"
