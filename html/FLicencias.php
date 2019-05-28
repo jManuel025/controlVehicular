@@ -64,12 +64,7 @@
     </div>
     <div class="row datos-principales">
         <div class="col"></div>
-        <div class="col">
-            <label>
-            <p class="date">Fecha de expedicion:</p>
-            <input name="fExpedicion" type="date" id="fExpedicion" required="" style="line-height:20px">
-            </label>
-        </div>
+        
         <div class="col">
             <label>
             <p class="select">Tipo</p>
@@ -88,8 +83,11 @@
         <div class="col"></div>
         <div class="col">
             <label>
-            <p class="date">Fecha de vencimiento:</p>
-            <input name="fVencimiento" type="date" id="fVencimiento" required="" style="line-height:20px">
+            <p class="select">Duracion</p>
+                 <input name="duracion" type="radio" value="3" id="3" checked="">
+                 <label for="3">3 años</label>
+                 <input name="duracion" type="radio" value="5" id="5">
+                 <label for="3">5 años</label>
             </label>
         </div>
         <div class="col">    

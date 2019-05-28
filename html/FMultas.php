@@ -77,12 +77,7 @@
       <input name="lugar" type="text" id="lugar" required="">
     </label>
         </div>
-         <div class="col">
-    <label>
-      <p class="date">Fecha:</p>
-      <input name="fecha" type="date" id="fecha" style="line-height:20px;" required="">
-    </label>
-         </div>
+         
          <div class="col"></div>
       </div>
       <div class="row datos-principales">

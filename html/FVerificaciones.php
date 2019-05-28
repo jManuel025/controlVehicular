@@ -55,15 +55,10 @@
       <div class="col">
     <label>
       <p>Vehiculo:</p>
-      <input name="vehiculo" type="number" id="vehiculo" required="">
+      <input name="vehiculo" type="text" id="vehiculo" required="">
     </label>
           </div>
-          <div class="col">
-    <label>
-      <p class="date">Fecha:</p>
-      <input name="fecha" type="date" id="fecha" required="">
-    </label>
-          </div>
+          
     <div class="col dictamen">
       <p>Dictamen:</p>
       <div class="radio">
