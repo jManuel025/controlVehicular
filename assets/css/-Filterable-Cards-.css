@@ -1,7 +1,3 @@
-#fNacimiento{
-  line-height: 12px;
-}
-
 .filtr-item {
   padding-top: 30px;
 }
@@ -103,7 +99,6 @@ div.card {
 
 .datos-principales {
   line-height: 1px;
-  text-align: center;
 }
 
 .contenido, h3 {
@@ -119,12 +114,15 @@ div.card {
   margin-top: 20px;
 }
 
-.firma {
+.sangre {
   margin-top: 20px;
 }
 
+.select {
+}
 
 .gpo-sang {
+  margin-top: 20px;
   line-height: 1px;
 }
 
@@ -137,7 +135,6 @@ div.card {
   margin-top: 20px;
 }
 
-
 .input-style {
   border-style: solid;
   border-width: 1px;
@@ -149,15 +146,15 @@ div.card {
 }
 
 .datos-principales {
-  margin-top: 0px;
+  margin-top: 40px;
 }
 
 .firma {
   margin-top: 30px;
 }
 
-.datos-final {
-  margin-top: 30px;
+.sangre {
+  margin-top: 10px;
 }
 
 .contenido h3 {
@@ -178,11 +175,70 @@ input {
   text-align: center;
 }
 
+.donador {
+}
+
 .sangre {
   margin-top: 20px;
 }
 
 .donador {
   margin-top: 0px;
+}
+
+div {
+  text-align: center;
+}
+
+table.tableC {
+  border: 1px solid #1C6EA4;
+  background-color: #EEEEEE;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+table.tableC td, table.tableC th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+
+table.tableC tbody td {
+  font-size: 13px;
+}
+
+table.tableC thead {
+  background: #1C6EA4;
+  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  border-bottom: 2px solid #444444;
+}
+
+table.tableC thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #FFFFFF;
+  border-left: 2px solid #D0E4F5;
+}
+
+table.tableC thead th:first-child {
+  border-left: none;
+}
+
+table.tableC tfoot td {
+  font-size: 14px;
+}
+
+table.tableC tfoot .links {
+  text-align: right;
+}
+
+table.tableC tfoot .links a {
+  display: inline-block;
+  background: #1C6EA4;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
 }
 
