@@ -15,7 +15,7 @@
 	$extension = end($prevExt);
 	$Foto['name'] = $Conductor.".".$extension;
 	$name = $Foto['name'];
-	$location = $rutaFotos;
+	$location = 'C:/xampp/htdocs/controlVehicular/fotos/';
 	$tmp_name = $Foto['tmp_name'];
 	move_uploaded_file($tmp_name, $location.$name);
 	$location2 = $location.$Conductor.".".$extension;

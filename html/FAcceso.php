@@ -6,6 +6,7 @@
   <title>Sistema de Control Vehicular</title>
   <link rel="stylesheet" type="text/css" href="../assets/css/style.css" media="all">
   <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Rubik:500&display=swap" rel="stylesheet">
 </head>
 
 <body id="iniciar">

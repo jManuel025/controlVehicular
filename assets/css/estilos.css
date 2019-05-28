@@ -9,7 +9,7 @@ div{
 }
 a{
     text-decoration: none;
-    color: #fff;
+    color: #f3f3f3;
     margin: .3125rem;
     padding: .3125rem .625rem;
     font-size: 1.25rem; 
@@ -25,15 +25,17 @@ input, select{
     outline: none;
 }
 .encabezado{
+    position: fixed;
     background: #2980b9;
     height: 3.125rem;
+    width: 100vw;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 .lateral{
     background: #2980b9;
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     top: 3.125rem;
     display: flex;
@@ -46,14 +48,25 @@ input, select{
     top: 50px;
     left: 15%;
     width: 85%;
-    height: calc(100vh - 3.125rem);
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}   
+}      
+    .contenido > h1{
+        margin: .625rem;
+        padding: .3125rem;
+    }
     .contenido > a{
         width: 15%;
+    }
+    .contenido > form{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: .625rem;
+
     }
     .boton{
         background: black;

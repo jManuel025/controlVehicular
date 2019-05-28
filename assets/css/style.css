@@ -1,8 +1,8 @@
 /*Fuentes*/
 @font-face{
-	font-family: "fajala";
-	src:url(../fonts/fuente.ttf) format('truetype');
-	font-weight: normal;
+	font-family: 'Rubik', sans-serif;
+	/* src:url(../fonts/fuente.ttf) format('truetype'); */
+	font-weight: 500;
 	font-style: normal;
 }
 /*Generales*/
@@ -25,7 +25,8 @@ div{
 	margin-bottom: 3.125rem;
 }
 #iniciar{
-	background: url(../img/cubes.png) #F4F4F4;
+	background: url(../img/fondo2.jpg) #F4F4F4;
+	background-size: 25%
 }
 
 #logo{
@@ -34,11 +35,11 @@ div{
 	/* align-self: flex-start; */
 }
 	#logo a{
-		font-family: "fajala",helvetica;
+		font-family: 'Rubik', sans-serif;
 		font-size: 3.125rem;
 		letter-spacing: 2px;
 		color:#2980b9;
-		text-shadow: 0px 0px 0px black, 1px 1px 0px black, 2px 2px 0px black;
+		text-shadow: 0px 0px 0px white, 1px 1px 0px white, 2px 2px 0px white;
 		transition: all 400ms;
 		/* line-height: 90px; */
 		/* margin-left: 10px; */
@@ -48,7 +49,6 @@ div{
 		cursor: pointer;
 		text-shadow: 0px 0px 0px black, -1px -1px 0px black, -2px -2px 0px black;
 	}
-
 .bloque{
 	margin-top: 0;
 	height: auto;

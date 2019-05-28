@@ -20,6 +20,15 @@ if (isset($_POST['idVehiculo'])) {
 	include("conexion.php");
 	$con = Conectar();
 	$SQL = "DELETE FROM Vehiculos WHERE idVehiculo = '$idVehiculo';";
+	//ODBC
+	$dsn = "respaldoVehiculos";
+	$user = "";
+	$pass = "";
+	$odbcCon = odbc_connect($dsn, $user, $pass);
+	$odbcSQL = "DELETE FROM Vehiculos WHERE idVehiculo = '$idVehiculo';";
+	$odbcQuery = odbc_exec($odbcCon, $odbcSQL);
+	odbc_close($odbcCon);
+	
 	Consulta($con, $SQL);
 	$eliminacion = mysqli_affected_rows($con);
 	if ($eliminacion == 0) {

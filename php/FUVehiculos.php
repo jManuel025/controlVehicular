@@ -36,7 +36,7 @@ if (isset($_POST['id'])) {
   $id = $_POST['id'];
   include("conexion.php");
   $Con = Conectar();
-  $SQL = "Select * FRom vehiculos where idvehiculo LIKE '$id';";
+  $SQL = "SELECT * FROM vehiculos WHERE idvehiculo LIKE '$id';";
   $Query = Consulta($Con, $SQL);
   $array = mysqli_fetch_row($Query);
   var_dump($array);

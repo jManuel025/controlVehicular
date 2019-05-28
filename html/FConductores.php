@@ -25,9 +25,9 @@
         <div class="donador">
             <p>Donador:</p>
             <div class="radio">
-                <input name="donador" type="radio" value="Si" id="si" checked />
+                <input name="donador" type="radio" value="1" id="si" checked />
                 <label for="si">Si</label>
-                <input name="donador" type="radio" value="No" id="no" />
+                <input name="donador" type="radio" value="0" id="no" />
                 <label for="no">No</label>
             </div>
         </div>
