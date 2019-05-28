@@ -1,7 +1,7 @@
 <?php 
 	//$Folio = $_POST["folio"];
 	$Vehiculo = $_POST["vehiculo"];
-	$Fecha = $_POST["fecha"];
+	$Fecha = date("Y/m/d");
 	$Dictamen = $_POST["dictamen"];
 	$Periodo = $_POST["periodo"];
 	

@@ -4,7 +4,7 @@
 	$Licencia = $_POST["licencia"];
 	$Monto = $_POST["monto"];
 	$Lugar = $_POST["lugar"];
-	$Fecha = $_POST["fecha"];
+	$Fecha = date("Y/m/d");
 	$Motivo = $_POST["motivo"];
 	$idOficial = $_POST["idOficial"];
 	$Hora = $_POST["hora"];

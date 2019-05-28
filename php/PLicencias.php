@@ -1,9 +1,16 @@
 <?php 
 	// $idLicencia = $_POST["idLicencia"];
 	$Conductor = $_POST["conductor"];
-	$fExpedicion = $_POST["fExpedicion"];
+	$fExpedicion = date("Y/m/d");
 	$Tipo = $_POST["tipo"];
-	$fVencimiento = $_POST["fVencimiento"];
+
+
+	$mas=$_POST["duracion"];
+	$Vfecha = strtotime ( $mas. 'year' , strtotime ( $fExpedicion ) ) ;
+	$Vfecha = date ( 'Y/m/j' , $Vfecha );
+
+
+	$fVencimiento = $Vfecha;
 	$Lugar = $_POST["lugar"];
 	$Expide = $_POST["expide"];
 	$Foto = $_FILES['foto']; //Se guarda como arreglo asociativo
