@@ -1,12 +1,12 @@
 <?php
 session_start();
 if ($_SESSION['validacion']) {
-    print($_SESSION['username']);
+    // print($_SESSION['username']);
     header("refresh:600;url=/html/cerrarSesion.php");
 } else {
     header("Location: /html/FAcceso.php");
 }
-print("<br><a href = './html/cerrarSesion.php'>Cerrar sesión</a>");
+// print("<br><a href = './html/cerrarSesion.php'>Cerrar sesión</a>");
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,14 +29,14 @@ print("<br><a href = './html/cerrarSesion.php'>Cerrar sesión</a>");
     <div id="wrapper">
         <div class="flex-grow-0" id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li class="sidebar-brand"> <a class="text-center logo" href="index1.html" style="color: #8fb8e4;">Sistema de control vehicular</a></li>
-                <li> <a href="html/menuConductores.html">Conductores</a></li>
-                <li> <a href="#">Licencias</a></li>
-                <li> <a href="#">Multas</a></li>
-                <li> <a href="#">Propietarios</a></li>
-                <li> <a href="#">Tenencias</a></li>
-                <li> <a href="#">Vehiculos</a></li>
-                <li> <a href="#">Verificaciones</a></li>
+                <li class="sidebar-brand"> <a class="text-center logo" href="index.html" style="color: #8fb8e4;">Sistema de control vehicular</a></li>
+                <li> <a href="HTML/menuConductores.php">Conductores</a></li>
+                <li> <a href="HTML/menuLicencias.php">Licencias</a></li>
+                <li> <a href="HTML/menuMultas.php">Multas</a></li>
+                <li> <a href="HTML/menuPropietarios.php">Propietarios</a></li>
+                <li> <a href="HTML/menuPropietarios.php">Tenencias</a></li>
+                <li> <a href="HTML/menuVehiculos.php">Vehiculos</a></li>
+                <li> <a href="HTML/menuVerificaciones.php">Verificaciones</a></li>
             </ul>
         </div>
         <div class="page-content-wrapper">
