@@ -92,25 +92,25 @@ if ($_SESSION['validacion']) {
               <div class="col">
                 <label>
                   <p>ID Vehiculo Antiguo:</p>
-                  <input name="idVehiculoV" type="number" id="idVehiculoV" value=<?php echo $array[0]; ?> required />
+                  <input name="idVehiculoV" type="number" id="idVehiculoV" value="<?php echo $array[0]; ?>" required />
                 </label>
               </div>
               <div class="col">
                 <label>
                   <p>ID Vehiculo Nuevo:</p>
-                  <input name="idVehiculoN" type="number" id="idVehiculoN" value=<?php echo $array[0]; ?> required />
+                  <input name="idVehiculoN" type="number" id="idVehiculoN" value="<?php echo $array[0]; ?>" required />
                 </label>
               </div>
               <div class="col">
                 <label>
                   <p>Propietario:</p>
-                  <input name="propietario" type="text" id="propietario" value=<?php echo $array[1]; ?> required />
+                  <input name="propietario" type="text" id="propietario" value="<?php echo $array[1]; ?>" required />
                 </label>
               </div>
               <div class="col">
                 <label>
                   <p>Placa:</p>
-                  <input name="placa" type="text" id="placa" value=<?php echo $array[2]; ?> required />
+                  <input name="placa" type="text" id="placa" value="<?php echo $array[2]; ?>" required />
                 </label>
               </div>
             </div>
@@ -118,19 +118,19 @@ if ($_SESSION['validacion']) {
               <div class="col">
                 <label>
                   <p>Tipo:</p>
-                  <input name="tipo" type="text" id="tipo" value=<?php echo $array[3]; ?> required />
+                  <input name="tipo" type="text" id="tipo" value="<?php echo $array[3]; ?>" required />
                 </label>
               </div>
               <div class="col">
                 <label>
                   <p>Modelo:</p>
-                  <input name="modelo" type="text" id="modelo" value=<?php echo $array[4]; ?> required />
+                  <input name="modelo" type="text" id="modelo" value="<?php echo $array[4]; ?>" required />
                 </label>
               </div>
               <div class="col">
                 <label>
                   <p>Año:</p>
-                  <input name="year" type="number" id="year" style="line-height: 20px;" value=<?php echo $array[5]; ?> required min='1900' max='2100' step='1' />
+                  <input name="year" type="number" id="year" style="line-height: 20px;" value="<?php echo $array[5]; ?>" required min='1900' max='2100' step='1' />
                 </label>
               </div>
               <div class="col uso">
@@ -147,19 +147,19 @@ if ($_SESSION['validacion']) {
               <div class="col">
                 <label>
                   <p>Color:</p>
-                  <input name="color" type="text" id="color" value=<?php echo $array[7]; ?> required />
+                  <input name="color" type="text" id="color" value="<?php echo $array[7]; ?>" required />
                 </label>
               </div>
               <div class="col">
                 <label>
                   <p>Puertas:</p>
-                  <input name="puertas" type="number" id="puertas" value=<?php echo $array[8]; ?> required />
+                  <input name="puertas" type="number" id="puertas" value="<?php echo $array[8]; ?>" required />
                 </label>
               </div>
               <div class="col">
                 <label>
                   <p>Marca:</p>
-                  <input name="marca" type="text" id="marca" required value=<?php echo $array[9]; ?> />
+                  <input name="marca" type="text" id="marca"  value="<?php echo $array[9]; ?>""  required  />
                 </label>
               </div>
               <div class="col uso">
@@ -176,25 +176,25 @@ if ($_SESSION['validacion']) {
               <div class="col">
                 <label>
                   <p>Capacidad de carga:</p>
-                  <input name="capCarga" type="number" id="capCarga" value=<?php echo $array[11]; ?> />
+                  <input name="capCarga" type="number" id="capCarga" value="<?php echo $array[11]; ?>"   />
                 </label>
               </div>
               <div class="col">
                 <label>
                   <p>Serie:</p>
-                  <input name="serie" type="text" id="serie" value=<?php echo $array[12]; ?> />
+                  <input name="serie" type="text" id="serie" value="<?php echo $array[12]; ?>"   />
                 </label>
               </div>
               <div class="col">
                 <label>
                   <p>Numero de motor:</p>
-                  <input name="numMotor" type="text" id="numMotor" value=<?php echo $array[13]; ?> />
+                  <input name="numMotor" type="text" id="numMotor" value="<?php echo $array[13]; ?>"   />
                 </label>
               </div>
               <div class="col">
                 <label>
                   <p>Línea:</p>
-                  <input name="linea" type="text" id="linea" value=<?php echo $array[14]; ?> />
+                  <input name="linea" type="text" id="linea" value="<?php echo $array[14]; ?>"   />
                 </label>
               </div>
             </div>
@@ -202,13 +202,13 @@ if ($_SESSION['validacion']) {
               <div class="col">
                 <label>
                   <p>Sublinea:</p>
-                  <input name="sublinea" type="text" id="sublinea" value=<?php echo $array[15]; ?> />
+                  <input name="sublinea" type="text" id="sublinea" value="<?php echo $array[15]; ?>"   />
                 </label>
               </div>
               <div class="col">
                 <label>
                   <p>Cilindraje:</p>
-                  <input name="cilindraje" type="number" id="cilindraje" value=<?php echo $array[16]; ?> />
+                  <input name="cilindraje" type="number" id="cilindraje" value="<?php echo $array[16]; ?>"   />
                 </label>
               </div>
               <div class="col">
@@ -225,7 +225,7 @@ if ($_SESSION['validacion']) {
               <div class="col">
                 <label>
                   <p>Origen:</p>
-                  <input type="text" name="origen" id="origen" value=<?php echo $array[18]; ?> />
+                  <input type="text" name="origen" id="origen" value="<?php echo $array[18]; ?>" />
                 </label>
               </div>
             </div>
