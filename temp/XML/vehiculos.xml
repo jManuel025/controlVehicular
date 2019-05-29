@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<vehiculos><vehiculo><idVehiculo>1</idVehiculo><propietario>a</propietario><placa>a</placa><tipo>a</tipo><modelo>a</modelo><anio>1999</anio><uso>Comercial</uso><color>negro</color><puertas>2</puertas><marca>a</marca><transmision>Automático</transmision><capCarga>5</capCarga><serie>a</serie><numMotor>a</numMotor><linea>a</linea><sublinea>a</sublinea><cilindraje>5</cilindraje><combustible>Electrico</combustible><origen>a</origen></vehiculo></vehiculos>
+<vehiculos></vehiculos>

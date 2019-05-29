@@ -99,12 +99,12 @@ if ($DisplayForm){
     
     <form id="form2" method="post" action="../php/PUConductores.php" enctype="multipart/form-data">
         <div class="row datos-principales">
-        <div class="col">
-        <label>
-            <p>CURP:</p>
-            <input name="curp" type="text" id="curp" required="" placeholder="AAAA000000AAAAAA00" value=<?php echo $array[0]; ?> />
-        </label>
-        </div>
+            <div class="col">
+            <label>
+                <p>CURP:</p>
+                <input name="curp" type="text" id="curp" required="" placeholder="AAAA000000AAAAAA00" value=<?php echo $array[0]; ?> />
+            </label>
+            </div>
         <div class="col">
         <label>
             <p>Nombre:</p>
@@ -121,12 +121,12 @@ if ($DisplayForm){
         <div class="row">
             <div class="col">
         <div class="firma">
-            <p>Firma:</p>
+            <!-- <p>Firma:</p>
             <div class="file">
                 <p>Seleccionar archivo</p>
-                <!-- <label for='firma'>Seleccionar archivo</label> -->
+                <label for='firma'>Seleccionar archivo</label>
                 <input type="file" name="firma" id="firma" required="">
-            </div>
+            </div> -->
             </div>
         </div>
     </div>  
