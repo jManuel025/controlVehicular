@@ -55,13 +55,14 @@ if ($_SESSION['validacion']) {
   <form action="../php/PLicencias.php" method="post" enctype="multipart/form-data" name="form1" id="form1">
     <h3>Proceso de Altas</h3>
     <div class="row datos-principales">
-        <div class="col">
+    <div class="col"></div>
+        <div class="col sm-3">
         <label>
       <p>Conductor:</p>
       <input name="conductor" type="text" id="conductor" required="" placeholder="AAAA000000AAAAAA00">
     </label>
         </div>
-      </div>
+      
     <!-- <div class="firma">
       <p>Foto:</p>
       <div class="file">
@@ -70,10 +71,8 @@ if ($_SESSION['validacion']) {
         <input type="file" name="foto" id="foto" required="">
       </div>
     </div> -->
-    <div class="row datos-principales">
-        <div class="col"></div>
-        
-        <div class="col">
+
+        <div class="col sm-3">
             <label>
             <p class="select">Tipo</p>
             <select name="tipo" id="tipo">
@@ -85,11 +84,7 @@ if ($_SESSION['validacion']) {
             </select>
             </label>
         </div>
-        <div class="col"></div>
-    </div>
-    <div class="row datos-final">
-        <div class="col"></div>
-        <div class="col">
+        <div class="col sm-3">
             <label>
             <p class="select">Duracion</p>
                  <input name="duracion" type="radio" value="3" id="3" checked="">
@@ -98,6 +93,12 @@ if ($_SESSION['validacion']) {
                  <label for="3">5 años</label>
             </label>
         </div>
+        <div class="col"></div>
+    </div>
+
+    <div class="row datos-final">
+        
+        
         <div class="col">    
             <label>
             <p>Lugar:</p>
@@ -110,7 +111,7 @@ if ($_SESSION['validacion']) {
             <input name="expide" type="text" id="expide" required="" placeholder="Gobierno de Querétaro">
             </label>
         </div>
-        <div class="col"></div>
+        
       </div>
     <div class="row">
         <div class="col">

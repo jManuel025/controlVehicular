@@ -49,7 +49,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div style="margin: 10px 0px 0px 10px;">
-                        <h1 class="text-center">Tenencias</h1>
+                        <h1 class="text-center">Propietarios</h1>
                         <h4 class="text-center" style="color: rgb(122,125,129);">Proceso de Cambios</h4>
                     </div>
                 </div>
