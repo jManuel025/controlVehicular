@@ -131,15 +131,15 @@
             </div>
         </div>
     </div>
-    <?php
-    if (isset($_GET["hecho"])) {
-        if ($_GET["hecho"] == 1) {
-            print("Registro realizado con éxito");
-        } elseif ($_GET["hecho"] == 0) {
-            print("Error en el registro");
-        }
-    }
-    ?>
+    <?php 
+if(isset($_GET["hecho"])){
+if($_GET["hecho"]==1){
+  print("Registro realizado con éxito");
+
+}elseif ($_GET["hecho"]==0) {
+  print("Error en el registro");
+} } 
+?>
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="../assets/js/-Filterable-Cards-.js"></script>
