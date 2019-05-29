@@ -1,5 +1,5 @@
 <?php 
-	//$Folio = $_POST["folio"];
+error_reporting(0);
 	$Vehiculo = $_POST["vehiculo"];
 	$Licencia = $_POST["licencia"];
 	$Monto = $_POST["monto"];
@@ -8,17 +8,6 @@
 	$Motivo = $_POST["motivo"];
 	$idOficial = $_POST["idOficial"];
 	$Hora = $_POST["hora"];
-	
-	//print("Folio = ".$Folio."<br>");
-	print("Vehiculo = ".$Vehiculo."<br>");
-	print("Licencia = ".$Licencia."<br>");
-	print("Monto = ".$Monto."<br>");
-	print("Lugar = ".$Lugar."<br>");
-	print("Fecha = ".$Fecha."<br>");
-	print("Motivo = ".$Motivo."<br>");
-	print("ID Oficial = ".$idOficial."<br>");
-	print("Hora = ".$Hora."<br>");
-	//enviar instrucciones SQL al SMBD
 	include("conexion.php");
 	$Con = Conectar();
 	$SQL = "INSERT INTO Multas VALUES ('','$Vehiculo','$Licencia','$Monto','$Lugar','$Fecha','$Motivo','$idOficial','$Hora');";

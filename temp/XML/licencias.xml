@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<licencias></licencias>
+<licencias><licencia><id>2</id><conductor>AACJ990825HMCLSN05</conductor><fecExpedicion>2019/05/29</fecExpedicion><tipo>A</tipo><fecVence>2022/05/29</fecVence><lugar>QUERETARO</lugar><expide>GOBIERNO</expide></licencia><licencia><id>3</id><conductor>HEMA991013HSPRLN04</conductor><fecExpedicion>2019/05/29</fecExpedicion><tipo>B</tipo><fecVence>2024/05/29</fecVence><lugar>QUERETARO</lugar><expide>GOBIERNO</expide></licencia><licencia><id>4</id><conductor>PEGM990120HMNRTS09</conductor><fecExpedicion>2019/05/29</fecExpedicion><tipo>C</tipo><fecVence>2022/05/29</fecVence><lugar>QUERETARO</lugar><expide>GOBIERNO</expide></licencia></licencias>

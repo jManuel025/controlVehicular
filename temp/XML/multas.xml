@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<multas></multas>
+<multas><multa><folio>1</folio><vehiculo>1</vehiculo><licencia>2</licencia><monto>1000</monto><lugar>Queretaro</lugar><fecha>2019/05/29</fecha><idOficial>Exceso de velocidad</idOficial><hora>13:03</hora></multa><multa><folio>2</folio><vehiculo>2</vehiculo><licencia>3</licencia><monto>8000</monto><lugar>5 de febrero</lugar><fecha>2019/05/29</fecha><idOficial>Circular sin placas</idOficial><hora>19:00</hora></multa></multas>
