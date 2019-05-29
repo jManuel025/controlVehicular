@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <verificaciones><verificacion><id>1</id><vehiculo>3</vehiculo><fecha>2019/05/28</fecha><dictamen>1</dictamen><periodo>1</periodo></verificacion></verificaciones>
+=======
+<verificaciones><verificacion><id>1</id><vehiculo>3</vehiculo><fecha>2019/05/29</fecha><dictamen>0</dictamen><periodo>2</periodo></verificacion></verificaciones>
+>>>>>>> master

@@ -12,7 +12,7 @@ if ($_SESSION['validacion']) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Front Proyecto Final</title>
+    <title>Sistema de Control Vehicular</title>
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/css/-Filterable-Cards-.css">
@@ -22,6 +22,7 @@ if ($_SESSION['validacion']) {
     <link rel="stylesheet" href="../assets/css/Sidebar-Menu-3.css">
     <link rel="stylesheet" href="../assets/css/Sidebar-Menu.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -66,28 +67,29 @@ if ($_SESSION['validacion']) {
 
 
 <?php
+error_reporting(0);
 if (isset($_POST['idVehiculo'])) {
 	$idVehiculo = $_POST['idVehiculo'];
 	include("conexion.php");
 	$con = Conectar();
-	$SQL = "DELETE FROM Vehiculos WHERE idVehiculo = '$idVehiculo';";
+	$SQL = "DELETE FROM vehiculos WHERE idVehiculo = $idVehiculo;";
 	//ODBC
-	$dsn = "respaldoVehiculos";
-	$user = "";
-	$pass = "";
-	$odbcCon = odbc_connect($dsn, $user, $pass);
-	$odbcSQL = "DELETE FROM vehiculos WHERE idVehiculo = $idVehiculo;";
-	$odbcQuery = odbc_exec($odbcCon, $odbcSQL);
-	odbc_close($odbcCon);
 	
 	Consulta($con, $SQL);
 	$eliminacion = mysqli_affected_rows($con);
-	if ($eliminacion == 0) {
+	if ($eliminacion == 0 || $eliminacion < 0) {
 		// $eliminacion += 1;
-		print($eliminacion . " eliminaciones realizadas, Eliminación fallida");
+		print("Eliminación fallida");
 	} else {
-		// $eliminacion += 1;
-		print($eliminacion . " eliminaciones realizadas, Eliminación exitosa");
+        // $eliminacion += 1;
+        $dsn = "respaldoVehiculos";
+        $user = "";
+        $pass = "";
+        $odbcCon = odbc_connect($dsn, $user, $pass);
+        $odbcSQL = "DELETE FROM vehiculos WHERE idVehiculo = $idVehiculo;";
+        $odbcQuery = odbc_exec($odbcCon, $odbcSQL);
+        odbc_close($odbcCon);
+		print("Eliminación exitosa");
 		$vehiculosB = new SimpleXMLElement($rutaXML.'vehiculosB.xml', null, true);
 		$bajaVehiculo = $vehiculosB->addChild('bajasID');
 		$bajaVehiculo->addChild('idBaja', $idVehiculo);

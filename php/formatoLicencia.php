@@ -1,15 +1,13 @@
 <?php
+    error_reporting(0);
     session_start();
     if ($_SESSION['validacion']) {
         header("refresh:600;url=../html/cerrarSesion.php");
     } else {
         header("Location: ../html/FAcceso.php");
     }
-    // include('conexion.php');
     require('fpdf.php');
     include('phpqrcode/qrlib.php');
-    // $Con = Conectar();
-    // $idLicencia = 94;
     $sql = "SELECT idLicencia, nombre, fNacimiento, fExpedicion, fVencimiento, tipo, firma, direccion, restriccion, tSangre, donador, tEmergencia, c.foto
             FROM conductores c, licencias l
             WHERE l.conductor = c.CURP AND idLicencia = $idLicencia;";
@@ -109,20 +107,6 @@
     $pdf->Cell(31, 2, 'SEA RECABADA COMO GARANTÍA DE', 0, 1, 'C');
     $pdf->SetXY(23,90);
     $pdf->Cell(31, 2, 'INFRACCION', 0, 1, 'C');
-    
-    $pdf->Line(74, 0, 74, 210);
-    $pdf->Line(0, 105, 148, 105);
-
-    $pdf->Line(0, 9.5, 148, 9.5);
-    $pdf->Line(0, 95.5, 148, 95.5);
-
-    $pdf->Line(10, 0, 10, 105);
-    $pdf->Line(64, 0, 64, 105);
-
-    $pdf->Line(84, 0, 84, 105);
-    $pdf->Line(138, 0, 138, 105);
-    $pdf->Line(84, 0, 84, 105);
-    
     // POSTERIOR --------------------------
     $pdf->Image('../temp/licencias/recursos/911.jpg', 86, 12, 10);
     $pdf->Image('../temp/licencias/recursos/089.jpg', 126, 12, 9.5);

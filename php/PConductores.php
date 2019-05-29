@@ -1,8 +1,8 @@
 <?php
+error_reporting(0);
 	$CURP = $_POST["curp"];
 	$Nombre = $_POST["nombre"];
 	$Direccion = $_POST["direccion"];
-	
 	$Firma = $_FILES['firma'];
 	$prevExt = explode(".", $Firma['name']);
 	$extension = end($prevExt);
@@ -12,7 +12,6 @@
 	$tmp_name = $Firma['tmp_name'];
 	move_uploaded_file($tmp_name, $location.$name);
 	$location2=$location.$CURP.".".$extension;
-	
 	$Foto = $_FILES['foto'];
 	$prevExtF = explode(".", $Foto['name']);
 	$extensionF = end($prevExtF);
@@ -22,24 +21,11 @@
 	$tmp_nameF = $Foto['tmp_name'];
 	move_uploaded_file($tmp_nameF, $locationF.$nameF);
 	$location2F = $locationF.$CURP.".".$extensionF;
-
-	
 	$Donador = $_POST["donador"];
 	$tSangre = $_POST["tSangre"];
 	$Restriccion = $_POST["restriccion"];
 	$telEmergencia = $_POST["telEmergencia"];
 	$fNacimiento = $_POST["fNacimiento"];
-	
-	print("CURP = ".$CURP."<br>");
-	print("Nombre = ".$Nombre."<br>");
-	print("Direccion = ".$Direccion."<br>");
-	print("Firma = ".$location2."<br>");
-	print("Donador = ".$Donador."<br>");
-	print("Grupo sanguineo = ".$tSangre."<br>");
-	print("Restriccion = ".$Restriccion."<br>");
-	print("Telefono de emergencia = ".$telEmergencia."<br>");
-	print("Fecha de nacimiento = ".$fNacimiento."<br>");
-	//enviar instrucciones SQL al SMBD
 	include("conexion.php");
 	$Con = Conectar();
 	$SQL = "INSERT INTO Conductores VALUES ('$CURP','$Nombre','$Direccion','$location2','$Donador','$tSangre','$Restriccion','$telEmergencia','$fNacimiento', '$location2F');";

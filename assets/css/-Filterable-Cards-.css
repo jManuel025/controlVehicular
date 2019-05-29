@@ -1,3 +1,6 @@
+*{
+  font-family: 'Quicksand', sans-serif;
+}
 .filtr-item {
   padding-top: 30px;
 }
@@ -75,6 +78,17 @@ div.card {
   border-top: 1px;
 }
 
+.btn{
+  padding: 0px .750rem;
+  border-radius: 25px;
+  font-weight: 500;
+}
+.btn-primary{
+  border: none;
+  padding: .3125rem 1rem;
+  border-radius: 25px;
+  font-weight: 500;
+}
 .btnRegistra {
   background-color: #314c80;
   border-style: none;
@@ -136,7 +150,7 @@ div.card {
   border-radius: 5px;
   border-style: inset;
   border: 1px #808080;
-  margin-left: 6px;
+  margin-left: 10px;
   margin-right: 6px;
   text-align: center;
   padding-left: .5em;
@@ -147,10 +161,12 @@ input{
   border-radius: 5px;
   border-style: inset;
   border: 1px #657281;
-  margin-left: 6px;
-  margin-right: 6px;
+  margin-left: 10px;
+  margin-right: 10px;
   text-align: center;
   padding-left: .5em;
+  height: 30px;
+  outline: none;
 }
 
 .datos-principales {
@@ -168,8 +184,9 @@ input{
 .contenido h3 {
   color: #808080;
 }
-
-
+form{
+  align-self: center;
+}
 
 #form1 {
   text-align: center;
@@ -183,14 +200,18 @@ input{
   margin-top: 20px;
 }
 
-
+#eliminar{
+  padding: 0px .75rem;
+  border-radius: 25px;
+  font-weight: 500;
+}
 
 div {
   text-align: center;
 }
-
 table.tableC {
-  border: 1px solid #1C6EA4;
+  border: none;
+  /* border: 1px solid #1C6EA4; */
   background-color: #EEEEEE;
   width: 100%;
   text-align: left;
@@ -212,6 +233,7 @@ table.tableC thead {
   background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
   background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
   border-bottom: 2px solid #444444;
+  text-align: center;
 }
 
 table.tableC thead th {
@@ -240,4 +262,3 @@ table.tableC tfoot .links a {
   padding: 2px 8px;
   border-radius: 5px;
 }
-

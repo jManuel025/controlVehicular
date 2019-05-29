@@ -12,7 +12,7 @@ if ($_SESSION['validacion']) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Front Proyecto Final</title>
+    <title>Sistema de Control Vehicular</title>
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/css/-Filterable-Cards-.css">
@@ -22,6 +22,7 @@ if ($_SESSION['validacion']) {
     <link rel="stylesheet" href="../assets/css/Sidebar-Menu-3.css">
     <link rel="stylesheet" href="../assets/css/Sidebar-Menu.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -79,11 +80,8 @@ if ($_SESSION['validacion']) {
 		</p>
 	</form>
 </div>
-
-
-
-
 <?php
+error_reporting(0);
 if (isset($_POST['criterio']) && isset($_POST['atributo'])) {
 	$criterio = $_POST['criterio'];
 	$atributo = $_POST['atributo'];
@@ -104,7 +102,8 @@ if (isset($_POST['criterio']) && isset($_POST['atributo'])) {
 		    <th>Grupo sanguíneo</th>
 		    <th>Restricciones</th>
 		    <th>Teléfono de emergencia</th>
-		    <th>Fecha de nacimiento</th>
+            <th>Fecha de nacimiento</th>
+            <th>Foto</th>
         </tr>
         </thead>
         <tbody>

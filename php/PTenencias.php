@@ -1,21 +1,15 @@
 <?php 
-	//$idTenencia = $_POST["idTenencia"];
+error_reporting(0);
 	$Vehiculo  = $_POST["vehiculo"];
 	$Year = $_POST["year"];
 	$Monto = $_POST["monto"];
-	
-	//print("ID Tenencia = ".$idTenencia."<br>");
-	print("Vehiculo = ".$Vehiculo."<br>");
-	print("A�o = ".$Year."<br>");
-	print("Monto = ".$Monto."<br>");
-
 	include("conexion.php");
 	$Con = Conectar();
 	$SQL = "INSERT INTO Tenencias (vehiculo,anio,monto) VALUES ('$Vehiculo','$Year','$Monto');";
 	$cambio = Consulta($Con, $SQL);
 	session_start();
-    if ($_SESSION['validacion']) {
-		header("refresh:600;url=/html/cerrarSesion.php");
+	if ($_SESSION['validacion']) {
+	header("refresh:600;url=/html/cerrarSesion.php");
 		if ($cambio == True){
 			print("Registro exitoso");	
 			header("Location:../html/FTenencias.php?hecho=1");
@@ -26,8 +20,8 @@
 			print(" tablas afectadas. Registro fallido");	
 			header("Location:../html/FTenencias.php?hecho=0");
 		}
-    } else {
-        header("Location: ../html/FAcceso.php");
+	} else {
+			header("Location: ../html/FAcceso.php");
 	}
 	Desconectar($Con);
 ?>

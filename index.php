@@ -50,10 +50,13 @@ if ($_SESSION['validacion']) {
                     <div style="margin: 10px 0px 0px 10px;">
                         <h1>Inicio</h1>
                     </div>
+                    
                 </div>
             </div>
             <div>
-                <div class="card"></div>
+                <div class="card" style="height:85vh;">
+                    <img src="./assets/img/escudo.png" alt="" style="width: 600px; margin:auto;">
+                </div>
             </div>
         </div>
     </div>

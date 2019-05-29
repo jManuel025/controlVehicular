@@ -22,6 +22,7 @@ if ($_SESSION['validacion']) {
     <link rel="stylesheet" href="../assets/css/Sidebar-Menu-3.css">
     <link rel="stylesheet" href="../assets/css/Sidebar-Menu.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500&display=swap" rel="stylesheet">
 </head>
 
 <body>

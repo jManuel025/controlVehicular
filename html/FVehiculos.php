@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Front Proyecto Final</title>
+    <title>Sistema de Control Vehicular</title>
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/css/-Filterable-Cards-.css">
@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../assets/css/Sidebar-Menu-3.css">
     <link rel="stylesheet" href="../assets/css/Sidebar-Menu.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -41,12 +42,12 @@
             <div class="row">
                 <div class="col-md-12">
                     <div style="margin: 10px 0px 0px 10px;">
-                        <h1 class="text-center">Conductores</h1>
+                        <h1 class="text-center">Vehiculos</h1>
                     </div>
                 </div>
             </div><div class="contenido">
   <form method="post" action="../php/PVehiculos.php" enctype="multipart/form-data">
-    <h3>Vehículos</h3>
+    <h3>Proceso de altas</h3>
     <div class="row datos-principales">
         <!-- <div class="col">
             <label>

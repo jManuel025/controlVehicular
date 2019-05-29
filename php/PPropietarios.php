@@ -1,20 +1,13 @@
 <?php
-	//recibimos variables desde el formulario
+error_reporting(0);
 	$RFC = $_POST["rfc"];
 	$CURP = $_POST["curp"];
 	$Nombre = $_POST["nombre"];
 	$Direccion = $_POST["direccion"];
-	//imprimimos contenido de variables
-	print("RFC = ".$RFC."<br>");
-	print("CURP = ".$CURP."<br>");
-	print("Nombre = ".$Nombre."<br>");
-	print("Direccion = ".$Direccion."<br>");
-	//enviar instrucciones SQL al SMBD
 	include("conexion.php");
 	$Con = Conectar();
 	$SQL = "INSERT INTO Propietarios VALUES ('$RFC','$CURP','$Nombre','$Direccion');";
 	$cambio = Consulta($Con, $SQL);
-	 
 	session_start();
 	if ($_SESSION['validacion']) {
 		header("refresh:600;url=/html/cerrarSesion.php");

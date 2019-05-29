@@ -1,16 +1,9 @@
 <?php 
-	//$Folio = $_POST["folio"];
+	error_reporting(0);
 	$Vehiculo = $_POST["vehiculo"];
 	$Fecha = date("Y/m/d");
 	$Dictamen = $_POST["dictamen"];
 	$Periodo = $_POST["periodo"];
-	
-	//print("Folio = ".$Folio."<br>");
-	print("Vehiculo = ".$Vehiculo."<br>");
-	print("Fecha = ".$Fecha."<br>");
-	print("Dictamen = ".$Dictamen."<br>");
-	print("Periodo = ".$Periodo."<br>");
-
 	include("conexion.php");
 	$Con = Conectar();
 	$SQL = "INSERT INTO Verificaciones (vehiculo,fecha,periodo,dictamen) VALUES ('$Vehiculo','$Fecha','$Periodo','$Dictamen');";
